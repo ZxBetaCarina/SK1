@@ -1,0 +1,17 @@
+skill_game = Skill Game
+total_balance = Credit
+points = Points
+withdraw = Withdraw
+max = Max
+min = Min
+total_bet = Total Bet
+paytable = Paytable
+for_now = HIT PLAY OR SHUFFLE CUBE
+jackpot_mode = Jackpot Mode
+wild =  Wild
+got_it = Got it
+collect = Play Again
+reward = Reward
+bet_amount = Bet Amount
+retry = Retry
+shuffling_the_cube = Shuffling The Cube
