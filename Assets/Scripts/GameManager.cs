@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public int Score => score;
 
     internal int _difficulty_state;
+    private int scoremultiplier = 1;
 
     private void Awake()
     {
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score++;
+        score+= scoremultiplier;
         scoreText.text = score.ToString();
     }
 
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
         _difficulty_ui.SetActive(false);
         _conversion_ui.SetActive(true);
         _difficulty_state = 0;
+        scoremultiplier = 3;
     }
 
     public void Medium()
@@ -110,6 +112,7 @@ public class GameManager : MonoBehaviour
         _difficulty_ui.SetActive(false);
         _conversion_ui.SetActive(true);
         _difficulty_state = 1;
+        scoremultiplier = 5;
     }
 
     public void Hard()
@@ -117,5 +120,6 @@ public class GameManager : MonoBehaviour
         _difficulty_ui.SetActive(false);
         _conversion_ui.SetActive(true);
         _difficulty_state = 2;
+        scoremultiplier = 10;
     }
 }

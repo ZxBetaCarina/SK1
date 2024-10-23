@@ -108,6 +108,10 @@ public class GameController : MonoBehaviour
         }
 
     }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("LastBetIndex");
+    }
 
     void Update()
     {
@@ -262,6 +266,7 @@ public class GameController : MonoBehaviour
             BetConfirmed?.Invoke();
 
             PlayerStats.Instance.SetBetAmount(_betPoints[CurrentBetIndex]);
+            PlayerPrefs.SetInt("LastBetIndex",CurrentBetIndex);
         }
 
     }
@@ -389,7 +394,7 @@ public class GameController : MonoBehaviour
     public void InitiateBet()
     {
         AvailableCredit();
-        CurrentBetIndex = 0;
+        CurrentBetIndex = PlayerPrefs.GetInt("LastBetIndex", 0);
         _increaseBetButton.interactable = true;
         _decreaseBetButton.interactable = true;
         _maxBet.interactable = true;
