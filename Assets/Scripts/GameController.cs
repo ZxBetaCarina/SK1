@@ -249,6 +249,7 @@ public class GameController : MonoBehaviour
 
     }
 
+
     public void FinaliseBetOnClickSpin()
     {
         if (_currentPoints >= _currentPoints - _betPoints[CurrentBetIndex / 100])
