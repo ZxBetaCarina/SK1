@@ -20,6 +20,7 @@ public class ShuffleCard : MonoBehaviour
     [SerializeField] private GameObject _goHomePanel;
 
     [SerializeField] private AudioSource _winningSoundFX;
+    [SerializeField] private AudioSource _looseSoundFX;
     [SerializeField] private AudioSource _shufflingFX;
 
 
@@ -78,6 +79,7 @@ public class ShuffleCard : MonoBehaviour
         yield return new WaitForSeconds(3);
         betterLuckPanel.SetActive(true);
         _goHomePanel.SetActive(true);
+        _looseSoundFX.Play();
     }
 
     IEnumerator ShowWin()

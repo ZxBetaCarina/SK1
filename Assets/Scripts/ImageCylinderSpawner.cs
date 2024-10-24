@@ -64,6 +64,8 @@ public class ImageCylinderSpawner : MonoBehaviour
     public bool IsBonus1 = false;
 
     private bool imagesRefreshed = false;
+    
+    public AudioSource bonusSpinAudio;
 
 
 
@@ -914,6 +916,13 @@ public class ImageCylinderSpawner : MonoBehaviour
         //UIManager.INSTANCE._spinButton.interactable = false;
         _stopReelOnInteraction.gameObject.SetActive(false);
         _ticTacToeInteraction.gameObject.SetActive(false);
+        
+        if (bonusSpinAudio != null)
+        {
+            bonusSpinAudio.loop = true;
+            bonusSpinAudio.Play();
+        }
+        
         StartCoroutine(FifteenBonusSpins());
     }
 
@@ -927,6 +936,11 @@ public class ImageCylinderSpawner : MonoBehaviour
         StartRotatingCylinders();
 
         yield return StartCoroutine(StopCylindersSequentially());
+
+        if (bonusSpinAudio != null && bonusSpinAudio.isPlaying)
+        {
+            bonusSpinAudio.Stop(); // Stop the sound
+        }
 
         yield return null;
         bonusSpins = false;
