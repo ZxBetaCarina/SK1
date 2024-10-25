@@ -640,10 +640,10 @@ namespace RubicsCube
 
         public (float,int) RewardPercentage()
         {
-            //int count = DetectFacesPattern().Count;
-            //return (_paytable.RewardPercentForEachMatchingfaceInRubicsCube * count,count);
-            int test = 3;
-            return (_paytable.RewardPercentForEachMatchingfaceInRubicsCube * test,test);
+            int count = DetectFacesPattern().Count;
+            return (_paytable.RewardPercentForEachMatchingfaceInRubicsCube * count,count);
+            //int test = 3;
+            //return (_paytable.RewardPercentForEachMatchingfaceInRubicsCube * test,test);
             
         }
 
