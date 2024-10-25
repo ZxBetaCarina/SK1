@@ -206,8 +206,9 @@ public class GameController : MonoBehaviour
         {
             (float, int) rewards = ServiceLocator.Instance.Get<RubikCubeController>().RewardPercentage();
             float winningAmount = (int)(rewards.Item1 * _betPoints[CurrentBetIndex] / 100);
-            winningAmountText.text = $"Face Completed: {rewards.Item2}\n Reward: {winningAmount}";
-            _currentPoints += winningAmount;
+            float cubeReward = (float)Math.Ceiling(rewards.Item1 / 100 * float.Parse(_bettingAmountUSD[CurrentBetIndex]));
+            winningAmountText.text = $"Face Completed: {rewards.Item2}\n Reward: {cubeReward}";
+            _currentPoints += cubeReward;
         }
         //else if (JackPotMode)
         //{
