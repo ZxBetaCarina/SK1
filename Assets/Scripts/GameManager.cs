@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         pointsText.gameObject.SetActive(false);
         backToHomeBtn.SetActive(false);
     }
+    
 
     public void Play()
     {
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
         //playButton.SetActive(true);
         gameOver.SetActive(true);
 
-        pointsText.text = Math.Round(score * .01f,2) + " USD";
+        pointsText.text = Math.Round(score * .01f,2) + " $";
 
         float points = PlayerPrefs.GetFloat("Balance");
         points = points + score * .01f;

@@ -130,6 +130,7 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
+        Debug.Log($"CurrentBetIndex: {CurrentBetIndex}");
     }
 
     /// <summary>
@@ -205,7 +206,7 @@ public class GameController : MonoBehaviour
         if (UIManager.INSTANCE.RubicMode)
         {
             (float, int) rewards = ServiceLocator.Instance.Get<RubikCubeController>().RewardPercentage();
-            float winningAmount = (int)(rewards.Item1 * _betPoints[CurrentBetIndex] / 100);
+            //float winningAmount = (int)(rewards.Item1 * _betPoints[CurrentBetIndex] / 100);
             float cubeReward = (float)Math.Ceiling(rewards.Item1 / 100 * float.Parse(_bettingAmountUSD[CurrentBetIndex]));
             winningAmountText.text = $"Face Completed: {rewards.Item2}\n Reward: {cubeReward}";
             _currentPoints += cubeReward;
@@ -223,18 +224,18 @@ public class GameController : MonoBehaviour
             {
                 foreach (string name in _patternFormed)
                 {
-                    float winningAmount = ServiceLocator.Instance.Get<PaytableCalculator>().CalcReward(name, _betPoints[CurrentBetIndex]);
-                    _currentPoints += winningAmount;
+                    float cubeReward = ServiceLocator.Instance.Get<PaytableCalculator>().CalcReward(name, _betPoints[CurrentBetIndex]);
+                    _currentPoints += cubeReward;
                 }
                 _patternFormed.Clear();
             }
             else
             {
-                float winningAmount = ServiceLocator.Instance.Get<PaytableCalculator>().CalcReward(character, _betPoints[CurrentBetIndex]); /*= _normalWinningMultiple * _betPoints[CurrentBetIndex] / 100*/
+                float cubeReward = ServiceLocator.Instance.Get<PaytableCalculator>().CalcReward(character, _betPoints[CurrentBetIndex]); /*= _normalWinningMultiple * _betPoints[CurrentBetIndex] / 100*/
                 if (!winningAmountText.gameObject.activeInHierarchy)
                 {
-                    winningAmountText.text = "Reward: " + winningAmount.ToString() + " PTS";
-                    _currentPoints += winningAmount;
+                    winningAmountText.text = "Reward: " + cubeReward.ToString() + " PTS";
+                    _currentPoints += cubeReward;
                 }
             }
 
@@ -309,7 +310,7 @@ public class GameController : MonoBehaviour
             {
                 CurrentBetIndex++;
                 Mathf.Clamp(CurrentBetIndex, 0, 4);
-                _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "USD";
+                _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
                 _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
                 CheckForWinningPatterns.INSTANCE.ReviewImages(false);
                 BetChanged?.Invoke();
@@ -338,7 +339,7 @@ public class GameController : MonoBehaviour
         if (!ImageCylinderSpawner.Instance.CylinderSpawning)
         {
             CurrentBetIndex = 5;
-            _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "USD";
+            _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
             _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
             CheckForWinningPatterns.INSTANCE.ReviewImages(false);
             BetChanged?.Invoke();
@@ -353,7 +354,7 @@ public class GameController : MonoBehaviour
         if (!ImageCylinderSpawner.Instance.CylinderSpawning)
         {
             CurrentBetIndex = 0;
-            _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "USD";
+            _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
             _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
             CheckForWinningPatterns.INSTANCE.ReviewImages(false);
             BetChanged?.Invoke();
@@ -370,7 +371,7 @@ public class GameController : MonoBehaviour
             {
                 CurrentBetIndex--;
                 Mathf.Clamp(CurrentBetIndex, 0, 4);
-                _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "USD";
+                _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
                 _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
                 CheckForWinningPatterns.INSTANCE.ReviewImages(false);
                 BetChanged?.Invoke();
@@ -400,7 +401,7 @@ public class GameController : MonoBehaviour
         _increaseBetButton.interactable = true;
         _decreaseBetButton.interactable = true;
         _maxBet.interactable = true;
-        _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "USD";
+        _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
         _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
         _currentPointsText.text = _currentPoints + "Pts";
         //NormalPaytable.gameObject.SetActive(true);

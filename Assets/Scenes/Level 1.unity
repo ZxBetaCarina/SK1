@@ -42187,7 +42187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100 Pts = 1USD
+  m_text: 100 Pts = 1 $
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b88714a13c1d4142b30f9ab1e684a0f, type: 2}
   m_sharedMaterial: {fileID: 8366337877461418962, guid: 1b88714a13c1d4142b30f9ab1e684a0f, type: 2}
