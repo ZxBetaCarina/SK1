@@ -24,7 +24,7 @@ public class AnimateButton : MonoBehaviour
     private void RandomTextSetter()
     {
         var randomInt = Random.Range(0, 3);
-        Debug.Log("==============================================Random Int"+randomInt);
+        //Debug.Log("==============================================Random Int"+randomInt);
         switch (randomInt)
         {
             case 0:

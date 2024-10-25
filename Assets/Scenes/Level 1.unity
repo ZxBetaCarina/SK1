@@ -5513,9 +5513,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 333860368}
-  string1: 'Hit Play or Shuffle Cube '
-  string2: Click Here to shuffle Cube
-  string3: shuffle Cube
+  string1: 'Hit Play Or Shuffle Cube '
+  string2: Click Here To Shuffle Cube
+  string3: Shuffle Cube
 --- !u!1 &335889626
 GameObject:
   m_ObjectHideFlags: 0
@@ -11690,7 +11690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.028, y: 0.67300004}
   m_AnchorMax: {x: 0.10147917, y: 0.73300004}
-  m_AnchoredPosition: {x: 31.850464, y: -198.14276}
+  m_AnchoredPosition: {x: 31.850342, y: -198.14276}
   m_SizeDelta: {x: 242.48834, y: 14.816895}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &629713005
@@ -15245,7 +15245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.028, y: 0.67300004}
   m_AnchorMax: {x: 0.10147917, y: 0.73300004}
-  m_AnchoredPosition: {x: 31.850464, y: -198.14276}
+  m_AnchoredPosition: {x: 31.850342, y: -198.14276}
   m_SizeDelta: {x: 242.48834, y: 14.816895}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &789320240
@@ -41418,10 +41418,10 @@ RectTransform:
   - {fileID: 2308540113176080263}
   m_Father: {fileID: 814232995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -65, y: 127.99744}
-  m_SizeDelta: {x: 1737.5931, y: 1299.7767}
+  m_SizeDelta: {x: -182.40686, y: 219.77673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2101585553
 GameObject:

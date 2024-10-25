@@ -10,9 +10,19 @@ public class DemoUI : MonoBehaviour
     [SerializeField] private Button three;
     [SerializeField] private Button four;
 
+    private static DemoUI _instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -56,7 +66,7 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene4()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
         panel.SetActive(false);
     }
 
@@ -69,6 +79,7 @@ public class DemoUI : MonoBehaviour
                 panel.SetActive(false);
                 return;
             }
+
             panel.SetActive(true);
         }
     }
