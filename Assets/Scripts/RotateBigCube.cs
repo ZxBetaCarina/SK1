@@ -7,7 +7,7 @@ public class RotateBigCube : MonoBehaviour
 {
     [SerializeField] private float _allowedInputOffset;
     [SerializeField] private float _displacementForSwipeGesture;
-    [SerializeField] private float _rotationTime = 0.1f;
+    [SerializeField] private float _rotationTime = 1f;
     private Vector2 firstPressPos;
     private Vector2 secondPressPos;
     private Vector2 currentSwipe;

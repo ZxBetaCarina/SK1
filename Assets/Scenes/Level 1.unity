@@ -5512,6 +5512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aefa9a57060ba44f9bc7c5e81466402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 333860368}
+  string1: 'Hit Play or Shuffle Cube '
+  string2: Click Here to shuffle Cube
+  string3: shuffle Cube
 --- !u!1 &335889626
 GameObject:
   m_ObjectHideFlags: 0
@@ -29639,7 +29643,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 0}
+  m_SizeDelta: {x: 80.9, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471615805
 MonoBehaviour:
