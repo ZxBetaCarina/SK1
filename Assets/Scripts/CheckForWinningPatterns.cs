@@ -52,6 +52,8 @@ public class CheckForWinningPatterns : MonoBehaviour
     public bool isBonus = false;
 
     private string _detectedCharacter;
+    
+    [SerializeField] private TextMeshProUGUI _characterNameText;
 
     private void Awake()
     {
@@ -447,6 +449,8 @@ public class CheckForWinningPatterns : MonoBehaviour
 
                         Icons detectedObjIcon = detectedObject.collider.GetComponent<Icons>();
                         _detectedCharacter = detectedObjIcon.Name;
+                        _characterNameText.text = $"Congrats! You made a combo of {detectedObjIcon.Name}, but the other symbol was the best spot:";
+                        
 
                         if (detectedObjIcon.Name == "Bonus1")
                         {

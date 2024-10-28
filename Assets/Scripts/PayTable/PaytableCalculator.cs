@@ -10,7 +10,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     [SerializeField] public PayTable_SO _paytable;
     [SerializeField] private List<TextMeshProUGUI> _rewardsInOrder;
     [SerializeField] private List<TextMeshProUGUI> _rewardFollowMeInOrder;
-    [SerializeField] private TextMeshProUGUI _characterNameText;
+    //[SerializeField] private TextMeshProUGUI _characterNameText;
 
     private void Awake()
     {
@@ -77,7 +77,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                 if (dict.Character == characterName)
                 {
                     // Update the UI with the character name
-                    _characterNameText.text = $"Congrats! You made a combo of {characterName}, but the other symbol was the best spot: ";
+                    //_characterNameText.text = $"Congrats! You made a combo of {characterName}, but the other symbol was the best spot: ";
 
                     return amount * dict.Paytable.RewardPercentage / 100;
                 }

@@ -12085,6 +12085,7 @@ MonoBehaviour:
   _paytables: {fileID: 11400000, guid: fb8fd1777d15ef6458e512d7fdbf447e, type: 2}
   ticTacToeInteraction: {fileID: 0}
   isBonus: 0
+  _characterNameText: {fileID: 1147244162}
 --- !u!114 &641386771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12136,7 +12137,6 @@ MonoBehaviour:
   - {fileID: 788294307316162477}
   - {fileID: 1034310164016922279}
   - {fileID: 4480829893777026942}
-  _characterNameText: {fileID: 1147244162}
 --- !u!1 &645742611
 GameObject:
   m_ObjectHideFlags: 0
@@ -28334,7 +28334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1375077514
 RectTransform:
   m_ObjectHideFlags: 0
