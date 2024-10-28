@@ -54,7 +54,7 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         panel.SetActive(false);
     }
 
@@ -66,7 +66,7 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene4()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         panel.SetActive(false);
     }
 
