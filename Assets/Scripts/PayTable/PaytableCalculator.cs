@@ -14,11 +14,12 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     private void Awake()
     {
         ServiceLocator.Instance.Register<PaytableCalculator>(this);
+        CalculatePaytableUIRewardAmount();
     }
 
     private void Start()
     {
-        CalculatePaytableUIRewardAmount();
+        
     }
 
     private void OnDestroy()

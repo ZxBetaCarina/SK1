@@ -108,10 +108,7 @@ public class GameController : MonoBehaviour
         }
 
     }
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("LastBetIndex");
-    }
+    
 
     void Update()
     {
@@ -130,7 +127,6 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
-        Debug.Log($"CurrentBetIndex: {CurrentBetIndex}");
     }
 
     /// <summary>
@@ -314,7 +310,7 @@ public class GameController : MonoBehaviour
                 _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
                 CheckForWinningPatterns.INSTANCE.ReviewImages(false);
                 BetChanged?.Invoke();
-                Debug.Log(CurrentBetIndex);
+                //Debug.Log(CurrentBetIndex);
                 if (CurrentBetIndex == 0)
                 {
                     _minBet.interactable = false;
@@ -409,5 +405,9 @@ public class GameController : MonoBehaviour
         timer = 0;
         //timerText.text = " ";
 
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("LastBetIndex");
     }
 }

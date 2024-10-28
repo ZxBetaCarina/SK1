@@ -14,15 +14,15 @@ public class DemoUI : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+      //  if (_instance == null)
+        //{
+          //  _instance = this;
+            //DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+          //  Destroy(gameObject);
+        //}
     }
 
     private void Start()
@@ -82,5 +82,9 @@ public class DemoUI : MonoBehaviour
 
             panel.SetActive(true);
         }
+    }
+    public void shufflethecube()
+    {
+        panel.SetActive(false);
     }
 }
