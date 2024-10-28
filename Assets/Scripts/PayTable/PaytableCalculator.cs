@@ -126,7 +126,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
         foreach (TextMeshProUGUI amountText in _rewardsInOrder)
         {
             float reward = (float)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) * _paytable._paytableCore[i].Paytable.RewardPercentage / 100);
-            amountText.text = "PTS " + $"{reward}" + "\n" + " USD " + $"{reward/100}";
+            amountText.text = "PTS " + $"{reward}" + "\n" + " $ " + $"{reward/100}";
             i++;
         }
     }
