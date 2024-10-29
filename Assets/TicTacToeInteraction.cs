@@ -20,6 +20,7 @@ public class TicTacToeInteraction : MonoBehaviour
     public string AnswerSelectedMessage = null;
     private bool answerSelected = false;
     private bool bestAnswerSelected = false;
+    public string bestansname;
 
     bool _selected_best_answer;
 
@@ -178,6 +179,7 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             bestAnswer = bestAns;
             bestAnswerSelected = true;
+            bestansname = bestAnswer.sprite.Name2Show;
             
             Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
         }

@@ -12,16 +12,23 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     [SerializeField] private List<TextMeshProUGUI> _rewardFollowMeInOrder;
     //[SerializeField] private TextMeshProUGUI _characterNameText;
 
+    private int betIndex;
+
     private void Awake()
     {
         ServiceLocator.Instance.Register<PaytableCalculator>(this);
-        CalculatePaytableUIRewardAmount();
         
+        CalculatePaytableUIRewardAmount();
     }
 
     private void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        int betIndex = GameController.Instance.CurrentBetIndex;
     }
 
     private void OnDestroy()
