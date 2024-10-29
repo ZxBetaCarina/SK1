@@ -450,7 +450,7 @@ public class CheckForWinningPatterns : MonoBehaviour
                         Icons detectedObjIcon = detectedObject.collider.GetComponent<Icons>();
                         _detectedCharacter = detectedObjIcon.Name;
                         TicTacToeInteraction ti = GameObject.FindObjectOfType<TicTacToeInteraction>();
-                        _characterNameText.text = $"Congrats! You made a combo of {detectedObjIcon.Name2Show}, and the {ti.bestansname} was the best spot:";
+                        _characterNameText.text = $"Congrats! You made a combo of {detectedObjIcon.Name2Show}, and the (ti.bestansname) was the best spot:";
                         
                         //_detectedCharacter = detectedObject.collider.gameObject.name;
                         //_characterNameText.text = $"Congrats! You made a combo of {_detectedCharacter}, but the other symbol was the best spot:";
