@@ -451,6 +451,8 @@ public class CheckForWinningPatterns : MonoBehaviour
                         _detectedCharacter = detectedObjIcon.Name;
                         _characterNameText.text = $"Congrats! You made a combo of {detectedObjIcon.Name}, but the other symbol was the best spot:";
                         
+                        //_detectedCharacter = detectedObject.collider.gameObject.name;
+                        //_characterNameText.text = $"Congrats! You made a combo of {_detectedCharacter}, but the other symbol was the best spot:";
 
                         if (detectedObjIcon.Name == "Bonus1")
                         {
