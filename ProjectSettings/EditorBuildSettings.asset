@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bonus 3.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/shufle the cube.unity
-    guid: 58dd79a1e1ffd4748a6a0eef77c6483a
+    path: Assets/Scenes/shuffle the cube.unity
+    guid: d778c14a7d1215b4ea1248c3684c2529
+  - enabled: 1
+    path: Assets/Scenes/free spin.unity
+    guid: 0401a357e2a346b4d8a391cc6d29f5af
   m_configObjects: {}

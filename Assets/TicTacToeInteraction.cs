@@ -178,6 +178,8 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             bestAnswer = bestAns;
             bestAnswerSelected = true;
+            
+            Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
         }
     }
 

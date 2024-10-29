@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 599.81616, y: -320.78986}
+  m_AnchoredPosition: {x: 609.99994, y: -315}
   m_SizeDelta: {x: 600, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190106289
@@ -468,9 +468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 399172774}
   one: {fileID: 190106289}
-  two: {fileID: 1689454078}
+  two: {fileID: 1954077080}
   three: {fileID: 1109944635}
-  four: {fileID: 1954077080}
+  four: {fileID: 1689454078}
 --- !u!1001 &622841169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 599.81616, y: -770.78986}
+  m_AnchoredPosition: {x: 609.99994, y: -765}
   m_SizeDelta: {x: 600, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109944635
@@ -1029,7 +1029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1299.8162, y: -320.78986}
+  m_AnchoredPosition: {x: 1310, y: -315}
   m_SizeDelta: {x: 600, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689454078
@@ -1756,7 +1756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1299.8162, y: -770.78986}
+  m_AnchoredPosition: {x: 1310, y: -765}
   m_SizeDelta: {x: 600, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1954077080

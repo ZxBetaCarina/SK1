@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Icons : MonoBehaviour, IEqualityComparer<Icons>, IEquatable<Icons>
 {
     public string Name;
+    public string Name2Show;
     public Sprite IconSprite { get { return GetComponent<SpriteRenderer>().sprite; } }
 
     public Sprite GetSprite()

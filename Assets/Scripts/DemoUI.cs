@@ -48,13 +48,13 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
         panel.SetActive(false);
     }
 
     private void ChangeToScene2()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         panel.SetActive(false);
     }
 
@@ -66,7 +66,7 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene4()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
         panel.SetActive(false);
     }
 
@@ -85,6 +85,7 @@ public class DemoUI : MonoBehaviour
     }
     public void shufflethecube()
     {
+        SceneManager.LoadScene(4);
         panel.SetActive(false);
     }
 }

@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 
     public Button _spinButton;
     public GameObject _followPanel;
+    public GameObject Demoshuffle;
 
     [SerializeField] private TextMeshProUGUI _winningText;
     [SerializeField] private GameObject _winningPanel;
@@ -117,6 +118,7 @@ public class UIManager : MonoBehaviour
 
         //_revealbutton.SetActive(false);
         _followPanel.SetActive(false);
+        Demoshuffle.SetActive(true);
         _skipPanel.SetActive(false);
         _showRubicButton.SetActive(false);
         _spinButton.gameObject.SetActive(true);
@@ -154,6 +156,13 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.DeleteKey("ReviewAuto");
         PlayerPrefs.DeleteKey("DropAuto");
         SceneManager.LoadScene(1);
+    }
+    public void StartDemoshuffle()
+    {
+        PlayerPrefs.DeleteKey("HitPlayAuto");
+        PlayerPrefs.DeleteKey("ReviewAuto");
+        PlayerPrefs.DeleteKey("DropAuto");
+        SceneManager.LoadScene(4);
     }
 
     private IEnumerator DelaySpinButton()
@@ -207,6 +216,7 @@ public class UIManager : MonoBehaviour
         if (!CheckForWinningPatterns.INSTANCE.isBonus && _winningPanelDelay != 3)
         {
             _followPanel.SetActive(true);
+            Demoshuffle.SetActive(true);
             _spinButton.interactable = true;
             _previewButton.interactable = false;
             _refreshButton.interactable = false;
@@ -318,6 +328,7 @@ public class UIManager : MonoBehaviour
         _NormalPaytable.gameObject.SetActive(false);
         _FollowPaytable.gameObject.SetActive(true);
         _followPanel.SetActive(false);
+        Demoshuffle.SetActive(false);
         //TODO: skip panel was added to remove timer
         _skipPanel.SetActive(false);
     }

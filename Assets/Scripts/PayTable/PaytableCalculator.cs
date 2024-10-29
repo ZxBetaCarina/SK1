@@ -16,6 +16,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     {
         ServiceLocator.Instance.Register<PaytableCalculator>(this);
         CalculatePaytableUIRewardAmount();
+        
     }
 
     private void Start()
