@@ -127,6 +127,8 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
+        //Debug.Log(CurrentBetIndex);
+        CurrentBetIndex = CurrentBetIndex;
     }
 
     /// <summary>

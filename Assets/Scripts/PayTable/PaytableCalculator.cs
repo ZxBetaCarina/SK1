@@ -32,6 +32,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     private void Update()
     {
         int betIndex = GameController.Instance.CurrentBetIndex;
+        CalculatePaytableUIRewardAmount();
     }
 
     private void OnDestroy()
@@ -153,6 +154,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                 (float)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) *
                     _paytable._paytableCore[i].Paytable.RewardPercentage / 100);
             amountText.text = "PTS " + $"{reward}" + "\n" + " $ " + $"{reward / 100}";
+            //Debug.Log($"Current Bet Index: {GameController.Instance.CurrentBetIndex}");
             i++;
         }
     }
@@ -167,6 +169,8 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                     (i * 17.75f) / 100);
             amountText.text = $"{reward}";
             i++;
+            
+            
         }
     }
 }
