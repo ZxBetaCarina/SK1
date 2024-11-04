@@ -12208,7 +12208,6 @@ MonoBehaviour:
   _spin_btn_img: {fileID: 1105410679}
   reviewText: {fileID: 749342627}
   _paytables: {fileID: 11400000, guid: fb8fd1777d15ef6458e512d7fdbf447e, type: 2}
-  ticTacToeInteraction: {fileID: 0}
   isBonus: 0
   _characterNameText: {fileID: 1147244162}
 --- !u!114 &641386771
@@ -12262,6 +12261,8 @@ MonoBehaviour:
   - {fileID: 788294307316162477}
   - {fileID: 1034310164016922279}
   - {fileID: 4480829893777026942}
+  prefabNames: []
+  Selectedpattern: {fileID: 0}
 --- !u!1 &645742611
 GameObject:
   m_ObjectHideFlags: 0
@@ -18638,6 +18639,7 @@ MonoBehaviour:
   _spinButton: {fileID: 1105410678}
   _followPanel: {fileID: 0}
   Demoshuffle: {fileID: 0}
+  FreeSpinButton: {fileID: 1633876405}
   _winningText: {fileID: 0}
   _winningPanel: {fileID: 1898258624}
   _message: {fileID: 1159263161}
@@ -32879,7 +32881,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 641386770}
         m_TargetAssemblyTypeName: CheckForWinningPatterns, Assembly-CSharp
-        m_MethodName: freespinbutton
+        m_MethodName: FreeSpinButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32896,6 +32898,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 952525972}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowFreeSpin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 854011955}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

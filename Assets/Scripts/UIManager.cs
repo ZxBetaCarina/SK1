@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Button _spinButton;
     public GameObject _followPanel;
     public GameObject Demoshuffle;
+    public GameObject FreeSpinButton;
 
     [SerializeField] private TextMeshProUGUI _winningText;
     [SerializeField] private GameObject _winningPanel;
@@ -226,6 +227,7 @@ public class UIManager : MonoBehaviour
     public void ShowFreeSpin()
     {
         StartCoroutine(FreeSpinShow());
+        FreeSpinButton.SetActive(false);
     }
 
     public IEnumerator FreeSpinShow()

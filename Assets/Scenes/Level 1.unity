@@ -7034,7 +7034,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 1000
 
-    USD 10'
+    $ 10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7937,7 +7937,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 5000
 
-    USD 50'
+    $ 50'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12334,6 +12334,12 @@ MonoBehaviour:
     ReplacingName: Evil Coin
   - CheckingName: Character9
     ReplacingName: Gold Bricks
+  - CheckingName: Bonus1
+    ReplacingName: Free Spin
+  - CheckingName: Bonus2
+    ReplacingName: Bonus 2x
+  - CheckingName: Bonus3
+    ReplacingName: Special Bonus
   Selectedpattern: {fileID: 1704973438}
 --- !u!1 &645742611
 GameObject:
@@ -18972,6 +18978,7 @@ MonoBehaviour:
   _spinButton: {fileID: 1105410678}
   _followPanel: {fileID: 882000957}
   Demoshuffle: {fileID: 640754789}
+  FreeSpinButton: {fileID: 0}
   _winningText: {fileID: 1050019944}
   _winningPanel: {fileID: 1898258624}
   _message: {fileID: 1159263161}
@@ -24333,7 +24340,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 500
 
-    USD 5'
+    $ 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44549,7 +44556,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 20
 
-    USD 0.2'
+    $ 0.2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44640,7 +44647,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 10
 
-    USD 0.1'
+    $ 0.1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -52153,7 +52160,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 50
 
-    USD 0.5'
+    $ 0.5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -52299,7 +52306,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 5
 
-    USD 0.05'
+    $ 0.05'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -52424,7 +52431,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 2
 
-    USD 0.02'
+    $ 0.02'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -53284,7 +53291,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PTS 100
 
-    USD 1'
+    $ 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

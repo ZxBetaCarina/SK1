@@ -244,6 +244,7 @@ public class GameController : MonoBehaviour
         Destroy(winningFx, 4f);
 
         _patterns = new();
+        print(1234);
 
     }
 

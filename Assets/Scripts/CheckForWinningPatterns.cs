@@ -493,6 +493,18 @@ public class CheckForWinningPatterns : MonoBehaviour
         }
     }
 
+    public void FreeSpinButton()
+    {
+        
+            isBonus = true;
+            ImageCylinderSpawner.Instance.IsBonus1 = true;
+            StartCoroutine(UIManager.INSTANCE.FreeSpinShow());
+
+            StartCoroutine(ShowDelaysSpinsLeft());
+            
+            //SceneManager.LoadScene
+        
+    }
 
     IEnumerator ShowDelaysSpinsLeft()
     {
