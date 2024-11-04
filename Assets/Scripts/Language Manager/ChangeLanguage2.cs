@@ -13,7 +13,7 @@ public class ChangeLanguage2 : MonoBehaviour
     {
         //Debug.Log(PlayerPrefs.GetString("LanguageChoosed")); 
         selectedLanguage = PlayerPrefs.GetString("LanguageChoosed");
-        LanguageManager.instance.ChangeLanguage(selectedLanguage);
+        //LanguageManager.instance.ChangeLanguage(selectedLanguage);
         //if (languageDropdown != null)
         //{
         //    List<string> availableLanguages = new List<string>(LanguageManager.instance.GetAvailableLanguages());

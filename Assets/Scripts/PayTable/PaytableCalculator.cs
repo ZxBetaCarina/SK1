@@ -10,20 +10,23 @@ public class PaytableCalculator : MonoBehaviour, IGameService
     [SerializeField] public PayTable_SO _paytable;
     [SerializeField] private List<TextMeshProUGUI> _rewardsInOrder;
     [SerializeField] private List<TextMeshProUGUI> _rewardFollowMeInOrder;
+
+    [SerializeField] private List<PrefabNames> prefabNames;
     //[SerializeField] private TextMeshProUGUI _characterNameText;
 
     private int betIndex;
 
+    [SerializeField] private TextMeshProUGUI Selectedpattern;
+
     private void Awake()
     {
         ServiceLocator.Instance.Register<PaytableCalculator>(this);
-        
+
         CalculatePaytableUIRewardAmount();
     }
 
     private void Start()
     {
-        
     }
 
     private void Update()
@@ -45,6 +48,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                 return dict.Paytable.Timer;
             }
         }
+
         return -1;
     }
 
@@ -85,16 +89,24 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                 if (dict.Character == characterName)
                 {
                     // Update the UI with the character name
-                    //_characterNameText.text = $"Congrats! You made a combo of {characterName}, but the other symbol was the best spot: ";
+                    foreach (var name in prefabNames)
+                    {
+                        if (name.CheckingName == characterName)
+                        {
+                            Selectedpattern.text = $"Congrats! You made a combo of {name.ReplacingName},: ";
+                        }
+                    }
 
                     return amount * dict.Paytable.RewardPercentage / 100;
                 }
             }
         }
+
         return 0;
     }
 
-    public (Icons sprite, RaycastOriginTransforms pattern) ReturnHighestValuePattern(List<(Icons, RaycastOriginTransforms)> possibilities)
+    public (Icons sprite, RaycastOriginTransforms pattern) ReturnHighestValuePattern(
+        List<(Icons, RaycastOriginTransforms)> possibilities)
     {
         int reward = 0;
         (Icons, RaycastOriginTransforms) currentAnswer = (null, null);
@@ -137,8 +149,10 @@ public class PaytableCalculator : MonoBehaviour, IGameService
         int i = 0;
         foreach (TextMeshProUGUI amountText in _rewardsInOrder)
         {
-            float reward = (float)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) * _paytable._paytableCore[i].Paytable.RewardPercentage / 100);
-            amountText.text = "PTS " + $"{reward}" + "\n" + " $ " + $"{reward/100}";
+            float reward =
+                (float)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) *
+                    _paytable._paytableCore[i].Paytable.RewardPercentage / 100);
+            amountText.text = "PTS " + $"{reward}" + "\n" + " $ " + $"{reward / 100}";
             i++;
         }
     }
@@ -148,9 +162,18 @@ public class PaytableCalculator : MonoBehaviour, IGameService
         int i = 1;
         foreach (TextMeshProUGUI amountText in _rewardFollowMeInOrder)
         {
-            int reward = (int)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) * (i*17.75f) / 100);
+            int reward =
+                (int)(GameController.Instance.GetPointsForRewardAtIndex(GameController.Instance.CurrentBetIndex) *
+                    (i * 17.75f) / 100);
             amountText.text = $"{reward}";
             i++;
         }
     }
+}
+
+[Serializable]
+public class PrefabNames
+{
+    public string CheckingName;
+    public string ReplacingName;
 }

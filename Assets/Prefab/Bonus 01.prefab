@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Bonus1
+  Name2Show: Bonus1

@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
 
 
     [HideInInspector] public List<Vector3> _patterns = new List<Vector3>();
-    [HideInInspector] public List<string> _patternFormed = new List<string>();
+    public List<string> _patternFormed = new List<string>();
 
 
     public bool IsRevealed = false;

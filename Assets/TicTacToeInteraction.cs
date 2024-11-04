@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class TicTacToeInteraction : MonoBehaviour
     public Image timeBar;
 
     private (Icons sprite, RaycastOriginTransforms patterns) bestAnswer;
+    public static (Icons sprite, RaycastOriginTransforms patterns) bestAnswerstatic;
 
     [SerializeField] public GameObject fx;
 
@@ -23,6 +25,7 @@ public class TicTacToeInteraction : MonoBehaviour
     public string bestansname;
 
     bool _selected_best_answer;
+    
 
     public async void SelectPosition(Transform pos)
     {
@@ -64,6 +67,8 @@ public class TicTacToeInteraction : MonoBehaviour
                     }
                 }
                 selectedAns = _paytableCalculator.ReturnHighestValuePattern(filteredPossiblilities);
+                
+                
             }
         }
 
@@ -73,15 +78,15 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
-                AnswerSelectedMessage = "Wild Got It";
+                //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
             }
             else
             {
-                AnswerSelectedMessage = "Got It";
+                //AnswerSelectedMessage = $"And the {bestansname} was the best spot.";
                 //OnNotSelectingBestAnswer();
                 await Task.Delay(1000);
             }
-            print(AnswerSelectedMessage);
+            //print(AnswerSelectedMessage);
 
             if (iconSelectedFromPossiblilities != null)
             {
@@ -180,6 +185,8 @@ public class TicTacToeInteraction : MonoBehaviour
             bestAnswer = bestAns;
             bestAnswerSelected = true;
             //bestansname = bestAnswer.sprite.Name2Show;
+
+            AnswerSelectedMessage = $"And the {bestAnswer.sprite.Name2Show} was the best spot.";
             
             Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
         }

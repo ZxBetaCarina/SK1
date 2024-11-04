@@ -30,4 +30,5 @@ public class Icons : MonoBehaviour, IEqualityComparer<Icons>, IEquatable<Icons>
     {
         return IconSprite == other.IconSprite || Name == other.Name;
     }
+    
 }
