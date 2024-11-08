@@ -11,6 +11,8 @@ public class ImageCylinderSpawner : MonoBehaviour
     [Header("UI")]
     [SerializeField] private StopOnReelInteraction _stopReelOnInteraction;
     [SerializeField] private TicTacToeInteraction _ticTacToeInteraction;
+    
+    [Header("RNG")] [SerializeField] private WeightedRNG<GameObject> slotRNGItems;
 
     [Header("Slot Image Cylinder")]
     [SerializeField] private LayerMask _imageLayer;

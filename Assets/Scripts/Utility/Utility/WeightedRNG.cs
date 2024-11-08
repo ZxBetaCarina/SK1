@@ -1,46 +1,43 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace AstekUtility
+[System.Serializable]
+public class WeightedRNG<T>
 {
-    /// <summary>
-    /// Create a object that can be randomly selected from a set of other with a set chance of getting selected
-    /// </summary>
-    public class WeightedRNG<T>
-    {
-        public T Value { get; private set; }
-        public int Probability { get; private set; }
+    public List<RNGItem> ItemsForRNG;
 
-        public WeightedRNG(T value, int probability)
-        {
-            Value = value;
-            Probability = probability;
-        }
+    [System.Serializable]
+    public class RNGItem
+    {
+        public T Item;
+        public int Probability;
     }
+}
 
-    /// <summary>
-    /// Get a Random object from a list depending on the probability of selection
-    /// </summary>
-    public static class CalcWeightedRNG
+public class GetWeightedRNG
+{
+    public static T GetValue<T>(List<WeightedRNG<T>.RNGItem> itemsForRNG)
     {
-        public static T GetRandomValue<T>(List<WeightedRNG<T>> collection)
+        int sum = 0;
+        foreach (var item in itemsForRNG)
         {
-            int totalProbability = 0;
-            foreach (WeightedRNG<T> item in collection)
-            {
-                totalProbability += item.Probability;
-            }
-
-            int rand = Random.Range(0, totalProbability);
-            int currentProb = 0;
-
-            foreach (WeightedRNG<T> selection in collection)
-            {
-                currentProb += selection.Probability;
-                if (rand <= currentProb)
-                    return selection.Value;
-            }
-            return default(T);
+            sum += item.Probability;
         }
+
+        int randomValue = Random.Range(0, sum); // Generate a random value between 0 and sum-1
+
+        int cumulativeProbability = 0;
+        for (int i = 0; i < itemsForRNG.Count; i++)
+        {
+            cumulativeProbability += itemsForRNG[i].Probability;
+
+            // Check if randomValue falls within the range of the current item's cumulative probability
+            if (randomValue < cumulativeProbability)
+            {
+                return itemsForRNG[i].Item; // Return the selected item
+            }
+        }
+
+        return default(T);
     }
 }
