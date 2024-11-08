@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
     private readonly int[] _betPoints = { 10, 50, 100, 150, 200, 250 };
     private int _initialBet;
     public int CurrentBetIndex { get; private set; } = 0;
-    public float _currentPoints = 10f;
+    public float _currentPoints = 500f;
     [SerializeField] private TMP_Text _availableCredits;
     public static Action BetChanged;
     public static Action BetConfirmed;
@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
         AvailableCredit();
         if (PlayerPrefs.HasKey("Balance"))
         {
-            _currentPoints = PlayerPrefs.GetFloat("Balance");
+            //_currentPoints = PlayerPrefs.GetFloat("Balance");
             _currentPointsText.text = _currentPoints + "Pts";
         }
 
@@ -127,8 +127,9 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
-        //Debug.Log(CurrentBetIndex);
+        Debug.Log(_currentPoints);
         CurrentBetIndex = CurrentBetIndex;
+        _currentPointsText.text = _currentPoints + "Pts";
     }
 
     /// <summary>
@@ -256,7 +257,7 @@ public class GameController : MonoBehaviour
         if (_currentPoints >= _currentPoints - _betPoints[CurrentBetIndex / 100])
         {
             if (_currentPoints - _betPoints[CurrentBetIndex] / 100 < 0) return;
-            _currentPoints -= _betPoints[CurrentBetIndex] / 100;
+            _currentPoints -= _betPoints[CurrentBetIndex] / 1;
             _currentPointsText.text = _currentPoints + "Pts";
             AvailableCredit();
             _increaseBetButton.interactable = false;

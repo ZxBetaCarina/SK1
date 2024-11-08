@@ -14177,7 +14177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 54575f4e9272f5143bee6218bbdc676f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 712dd443a1194c243bbfb01870a9b9c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -17131,7 +17131,7 @@ MonoBehaviour:
   _patterns: []
   _patternFormed: []
   IsRevealed: 0
-  _currentPoints: 10
+  _currentPoints: 500
   _availableCredits: {fileID: 1780933003}
   JackPotMode: 0
 --- !u!114 &854011959
@@ -22612,7 +22612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c3526f65aa9f4f4b83aa2bd6530e466, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04f27dffd02a2a148bda8b8a3d72664e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

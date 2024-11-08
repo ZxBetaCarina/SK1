@@ -94,7 +94,7 @@ public class PaytableCalculator : MonoBehaviour, IGameService
                     {
                         if (name.CheckingName == characterName)
                         {
-                            Selectedpattern.text = $"Congrats! You made a combo of {name.ReplacingName},: ";
+                            Selectedpattern.text = $"Congrats! You made a combo of {name.ReplacingName}, ";
                         }
                     }
 
