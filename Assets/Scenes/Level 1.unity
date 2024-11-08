@@ -12317,23 +12317,23 @@ MonoBehaviour:
   - {fileID: 4480829893777026942}
   prefabNames:
   - CheckingName: Character1
-    ReplacingName: yellow diamond
+    ReplacingName: Golden Jewel
   - CheckingName: Character2
-    ReplacingName: Green diamond
+    ReplacingName: Emerald Gem
   - CheckingName: Character3
-    ReplacingName: White diamond
+    ReplacingName: Crystal Diamond
   - CheckingName: Character4
-    ReplacingName: Blue diamond
+    ReplacingName: Blue Sapphire
   - CheckingName: Character5
-    ReplacingName: Red diamond
+    ReplacingName: Ruby Crown
   - CheckingName: Character6
-    ReplacingName: Wheel
+    ReplacingName: Golden Compass
   - CheckingName: Character7
-    ReplacingName: Coin
+    ReplacingName: Bronze Medallion
   - CheckingName: Character8
-    ReplacingName: Evil Coin
+    ReplacingName: Eagle Emblem
   - CheckingName: Character9
-    ReplacingName: Gold Bricks
+    ReplacingName: Golden Ingot
   - CheckingName: Bonus1
     ReplacingName: Free Spin
   - CheckingName: Bonus2
