@@ -127,6 +127,21 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
+        if (CurrentBetIndex == 0)
+        {
+            _minBet.interactable = false;
+            _maxBet.interactable = true;
+        }
+        else if (CurrentBetIndex == 5)
+        {
+            _maxBet.interactable = false;
+            _minBet.interactable = true;
+        }
+        else
+        {
+            _maxBet.interactable = true;
+            _minBet.interactable = true;
+        }
         Debug.Log(_currentPoints);
         CurrentBetIndex = CurrentBetIndex;
         _currentPointsText.text = _currentPoints + "Pts";
@@ -400,7 +415,7 @@ public class GameController : MonoBehaviour
         CurrentBetIndex = PlayerPrefs.GetInt("LastBetIndex", 0);
         _increaseBetButton.interactable = true;
         _decreaseBetButton.interactable = true;
-        _maxBet.interactable = true;
+        //_maxBet.interactable = true;
         _bettingInput.text = _bettingAmountUSD[CurrentBetIndex] + "$";
         _totalBet.text = _betPoints[CurrentBetIndex] + "Pts";
         _currentPointsText.text = _currentPoints + "Pts";
