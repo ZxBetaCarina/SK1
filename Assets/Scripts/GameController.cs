@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
         AvailableCredit();
         if (PlayerPrefs.HasKey("Balance"))
         {
-            //_currentPoints = PlayerPrefs.GetFloat("Balance");
+            _currentPoints = PlayerPrefs.GetFloat("Balance");
             _currentPointsText.text = _currentPoints + "Pts";
         }
 

@@ -1083,6 +1083,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1306472899734330465, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
+      propertyPath: m_text
+      value: Skill Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306472899734330465, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -1322,6 +1326,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6125838102068190317, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6226821871663112119, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1464,6 +1472,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817706663049342701, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817706663049342701, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8361269841644227695, guid: 65ca3f649cdc0964daca2ed87118a2ca, type: 3}

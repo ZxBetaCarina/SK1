@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1155,6 +1154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originTransforms: []
+  _positionOfEstimatedFrontPosition: {x: 0, y: 0, z: 0}
+  _paytable: {fileID: 0}
+  _submitCubeButton: {fileID: 0}
   spriteCollection: []
   upLayer1: []
   upLayer2: []
@@ -1206,11 +1208,13 @@ MonoBehaviour:
   CubeCenterHorizontal3: []
   CubeCenterHorizontal4: []
   CubeFrontFace: []
+  _faceAndRenderers: []
   imagesStrings: []
   _selectedFace: []
   _cubeSelectFace: {fileID: 0}
   _cubeState: {fileID: 0}
   _readCube: {fileID: 0}
+  _shufflingPanel: {fileID: 0}
   spriteRenderers: []
   OldSprites: []
   spritePositions: []
@@ -1219,7 +1223,6 @@ MonoBehaviour:
   parentTransform: {fileID: 0}
   rotationSpeed: 5
   targetRotation: -90
-  renderingCamera: {fileID: 0}
 --- !u!212 &160047946 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7939564339958248094, guid: d46e1991a4727e04293ec4327c2d01b8, type: 3}
@@ -5439,11 +5442,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7195510736108878255, guid: a2a7e62988f9a1e45b7c907acfad3e9a, type: 3}
   m_PrefabInstance: {fileID: 618006222}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &618006224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2733233318427512574, guid: a2a7e62988f9a1e45b7c907acfad3e9a, type: 3}
-  m_PrefabInstance: {fileID: 618006222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &625815024
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,13 +5831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61731294dff2c4240b3d569821b84a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _giveVictory: 0
-  ForthRow:
-  - {fileID: 107794266}
-  - {fileID: 1315555736}
-  - {fileID: 1047258372}
-  - {fileID: 628987694}
-  - {fileID: 916445778}
   raycastPatterns:
   - listName: First Coloumn
     raycastOrigins:
@@ -5943,14 +5934,17 @@ MonoBehaviour:
     - {fileID: 234663776}
     - {fileID: 2025354682}
     - {fileID: 244549817}
-  _lastRowParent: {fileID: 427849939}
   leftSpins: {fileID: 1666540579}
   leftSpinsText: {fileID: 1463871776}
   reviewImgParent: {fileID: 1335199564}
-  reviewBtn: {fileID: 120769701}
+  _Reveal_Buttons: []
+  _Spin_Buttons: []
+  _reveal_btn_img: {fileID: 0}
+  _spin_btn_img: {fileID: 0}
   reviewText: {fileID: 749342627}
   _paytables: {fileID: 0}
   isBonus: 0
+  _characterNameText: {fileID: 0}
 --- !u!114 &641386771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7604,6 +7598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stopReelOnInteraction: {fileID: 0}
   _ticTacToeInteraction: {fileID: 0}
+  slotRNGItems:
+    ItemsForRNG: []
   _imageLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -7626,6 +7622,7 @@ MonoBehaviour:
   - {fileID: 2731261227186135901, guid: 14e53bcf339b7a54d869bb9b5bcebe97, type: 3}
   - {fileID: 2731261227186135901, guid: a9f41c5e5585ba24096714b286c90389, type: 3}
   - {fileID: 2731261227186135901, guid: 8c8678c975b40ab4bbaa2911f7ddf04e, type: 3}
+  imagePrefabsFreeSpin: []
   numberOfImages: 21
   cylinderRadius: 5
   numberOfCylinders: 5
@@ -7657,6 +7654,7 @@ MonoBehaviour:
   cylinderParents: []
   cylinderSpawnPoints: []
   cylinderRotationStates: 
+  SpinAllowed: 0
   _currentCylinder: 0
   slotAudio: {fileID: 828720081}
   speedSlider: {fileID: 682090247}
@@ -7665,7 +7663,6 @@ MonoBehaviour:
   isMuted: 0
   fxPrefab: {fileID: 7225770717788829973, guid: fd93ee835bd1a2449bbe8b5b94bc8bbc, type: 3}
   spinButtonDup: {fileID: 1282966971}
-  _spinButton: {fileID: 1105410678}
   nextSceneName: MainMenu
   _difficultyFactor: 0
   CylinderSpawning: 0
@@ -7673,6 +7670,8 @@ MonoBehaviour:
   closeButton: {fileID: 2044868775}
   refreshBtn: {fileID: 734478253}
   won: 0
+  IsBonus1: 0
+  bonusSpinAudio: {fileID: 0}
   hideImage: {fileID: 529650616}
   hideImage1: {fileID: 175850427}
   hideImage2: {fileID: 612154582}
@@ -9585,11 +9584,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe28dfd47c7264a4abf9b9ffebcb50ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reveal_time: 0
   targetObject: {fileID: 1360596600}
   disableButton: {fileID: 1846001957}
   timerText: {fileID: 1952649594}
   revealFX: {fileID: 1924045057}
+  paytable: {fileID: 0}
   _winningFX: {fileID: 1441196120420917351, guid: 3a38fbaf9c3d0d842aad2bb0753f69ce, type: 3}
+  _winningAmountPanel: {fileID: 0}
+  winningAmountText: {fileID: 0}
   _bettingInput: {fileID: 1313370342}
   _increaseBetButton: {fileID: 2047289059}
   _maxBet: {fileID: 722195714}
@@ -9599,7 +9602,6 @@ MonoBehaviour:
   _currentPointsText: {fileID: 1893607297}
   coinImages: {fileID: 931144551}
   _coinFx: {fileID: 2266888794139965721}
-  _patterns: []
   NormalPaytable: {fileID: 629713007}
   FollowPaytable: {fileID: 789320240}
   _pattern_FX: {fileID: 196820, guid: 5bbaae42e70dd944f999c8db99e07ad9, type: 3}
@@ -9608,7 +9610,11 @@ MonoBehaviour:
   _jackPotModeWinningMultiple: 4
   _winningAudio: {fileID: 511913923}
   _jackpotModepanel: {fileID: 1994267348}
-  _currentPoints: 10
+  _exit_button: {fileID: 0}
+  _patterns: []
+  _patternFormed: []
+  IsRevealed: 0
+  _currentPoints: 500
   _availableCredits: {fileID: 1780933003}
   JackPotMode: 0
 --- !u!114 &854011959
@@ -11121,8 +11127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be001d241b0e1514280f9f345c1ec923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _winningPanel: {fileID: 1898258624}
+  _spinButton: {fileID: 1105410678}
+  _followPanel: {fileID: 882000957}
+  Demoshuffle: {fileID: 0}
+  FreeSpinButton: {fileID: 0}
   _winningText: {fileID: 592134950}
+  _winningPanel: {fileID: 1898258624}
   _message: {fileID: 1159263161}
   _waitingText: {fileID: 427161532}
   RubicControllers:
@@ -11131,18 +11141,62 @@ MonoBehaviour:
   - {fileID: 1453473972}
   - {fileID: 1021707325}
   _revealbutton: {fileID: 1846001955}
-  _followPanel: {fileID: 882000957}
   _skipPanel: {fileID: 0}
-  _spinButton: {fileID: 1105410678}
-  NormalPaytable: {fileID: 629713007}
-  FollowPaytable: {fileID: 789320240}
+  _previewButton: {fileID: 0}
+  _NormalPaytable: {fileID: 0}
+  _FollowPaytable: {fileID: 0}
   _refreshButton: {fileID: 734478253}
+  _instructionButton: {fileID: 0}
   _playAgainButton: {fileID: 175545205}
   _showRubicButton: {fileID: 1718922985}
-  freeSpinImage: {fileID: 618006224}
+  _freeSpinImage: {fileID: 0}
   _winningPanelDelay: 5
-  _readCube: {fileID: 0}
-  _cubeState: {fileID: 0}
+  cylinder: {fileID: 0}
+  hideIconsParent: {fileID: 0}
+  hideGlowyBit: {fileID: 0}
+  submitCube: {fileID: 0}
+  Quit: {fileID: 0}
+  renderPanel: {fileID: 0}
+  rubicsTimerBar: {fileID: 0}
+  rubicsModeTimer: {fileID: 0}
+  timerGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  audioSource: {fileID: 0}
+  timerEndSounds: {fileID: 0}
+  timeToSolveCubeInMin: 0
+  readCube: {fileID: 0}
+  cubeState: {fileID: 0}
+  FollowMeCheck: 0
+  _interaction: {fileID: 0}
+  stopTimer: 0
 --- !u!114 &952525973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11156,6 +11210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLanguage: 
+  _skillGameTitle: {fileID: 0}
 --- !u!114 &952525974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25509,9 +25564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5434ec2451c6e46a4f59f5ac693fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rubicsCube: {fileID: 0}
-  _targetCube: {fileID: 0}
-  _speed: 0
+  rubicsCube: {fileID: 0}
+  targetCube: {fileID: 0}
+  speed: 0
+  cameraObject: {fileID: 0}
+  minDistToConsiderSwipe: 0
+  relativePivot: {fileID: 0}
+  cubeState: {fileID: 0}
 --- !u!1 &2105540994
 GameObject:
   m_ObjectHideFlags: 0
@@ -28403,13 +28462,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}

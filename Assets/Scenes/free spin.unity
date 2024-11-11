@@ -14199,6 +14199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stopReelOnInteraction: {fileID: 528473351}
   _ticTacToeInteraction: {fileID: 1686076798}
+  slotRNGItems:
+    ItemsForRNG: []
   _imageLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -16894,7 +16896,7 @@ MonoBehaviour:
   _patterns: []
   _patternFormed: []
   IsRevealed: 0
-  _currentPoints: 10
+  _currentPoints: 500
   _availableCredits: {fileID: 1780933003}
   JackPotMode: 0
 --- !u!114 &854011959
@@ -34150,6 +34152,7 @@ MonoBehaviour:
   - {fileID: 661750525}
   _paytableCalculator: {fileID: 641386772}
   timeBar: {fileID: 1509268964}
+  timebartime: 0
   fx: {fileID: 0}
   AnswerSelectedMessage: 
   bestansname: 

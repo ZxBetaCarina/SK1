@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("Balance", 10);
+        PlayerPrefs.SetFloat("Balance", 500);
 
     }
 
