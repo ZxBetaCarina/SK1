@@ -14,6 +14,8 @@ public class TicTacToeInteraction : MonoBehaviour
     [Header("UI")]
     public Image timeBar;
 
+    public int timebartime;
+
     private (Icons sprite, RaycastOriginTransforms patterns) bestAnswer;
     public static (Icons sprite, RaycastOriginTransforms patterns) bestAnswerstatic;
 
@@ -150,7 +152,8 @@ public class TicTacToeInteraction : MonoBehaviour
 
         if (bestAnswer.sprite != null)
         {
-            float timer = _paytableCalculator.GetTimeForIcon(bestAnswer.sprite.Name);
+            //float timer = _paytableCalculator.GetTimeForIcon(bestAnswer.sprite.Name);
+            float timer = timebartime;
             StartCoroutine(Timer(timer));
         }
         else

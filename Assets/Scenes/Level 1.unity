@@ -34292,6 +34292,7 @@ MonoBehaviour:
   - {fileID: 661750525}
   _paytableCalculator: {fileID: 641386772}
   timeBar: {fileID: 1509268964}
+  timebartime: 5
   fx: {fileID: 0}
   AnswerSelectedMessage: 
   bestansname: 
