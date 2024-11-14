@@ -18,9 +18,10 @@ public class LanguageManagerUI : MonoBehaviour
     public TMP_Text jackpotModeText;
     public TMP_Text wildText;
     public TMP_Text gotItText;
-    public TMP_Text collectText;
+    public TMP_Text Play_AgainText;
     public TMP_Text rewardText;
     public TMP_Text betAmountText;
+    public TMP_Text spins_left;
 
     private void Awake()
     {
@@ -41,8 +42,9 @@ public class LanguageManagerUI : MonoBehaviour
         jackpotModeText.text = LanguageManager.instance.GetLocalizedString("jackpot_mode");
         wildText.text = LanguageManager.instance.GetLocalizedString("wild");
         gotItText.text = LanguageManager.instance.GetLocalizedString("got_it");
-        collectText.text = LanguageManager.instance.GetLocalizedString("collect");
+        Play_AgainText.text = LanguageManager.instance.GetLocalizedString("Play_Again");
         rewardText.text = LanguageManager.instance.GetLocalizedString("reward");
         betAmountText.text = LanguageManager.instance.GetLocalizedString("bet_amount");
+        betAmountText.text = LanguageManager.instance.GetLocalizedString("Spins_Left");
     }
 }
