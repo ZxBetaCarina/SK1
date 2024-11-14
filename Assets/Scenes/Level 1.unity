@@ -298,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 72c31ce9b8e25d34c9efab99c96d5c46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de8c7796c311b844aa3dfab02bd76cf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29314,7 +29314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713641187841846258, guid: 163bfc8ddaf9e7047b516a5a562fe8f1, type: 3}
       propertyPath: m_CellSize.y
-      value: 9000
+      value: 2222
       objectReference: {fileID: 0}
     - target: {fileID: 5713641187841846258, guid: 163bfc8ddaf9e7047b516a5a562fe8f1, type: 3}
       propertyPath: m_Constraint

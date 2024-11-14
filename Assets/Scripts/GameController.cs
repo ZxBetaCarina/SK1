@@ -106,6 +106,24 @@ public class GameController : MonoBehaviour
             _currentPoints = PlayerPrefs.GetFloat("Balance");
             _currentPointsText.text = _currentPoints + "Pts";
         }
+        if (CurrentBetIndex == 0)
+        {
+            _minBet.interactable = false;
+            _maxBet.interactable = true;
+        }
+        else if (CurrentBetIndex == 5)
+        {
+            _maxBet.interactable = false;
+            _minBet.interactable = true;
+        }
+        else
+        {
+            _maxBet.interactable = true;
+            _minBet.interactable = true;
+        }
+        Debug.Log(_currentPoints);
+        CurrentBetIndex = CurrentBetIndex;
+        _currentPointsText.text = _currentPoints + "Pts";
 
     }
     
@@ -127,24 +145,7 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
-        if (CurrentBetIndex == 0)
-        {
-            _minBet.interactable = false;
-            _maxBet.interactable = true;
-        }
-        else if (CurrentBetIndex == 5)
-        {
-            _maxBet.interactable = false;
-            _minBet.interactable = true;
-        }
-        else
-        {
-            _maxBet.interactable = true;
-            _minBet.interactable = true;
-        }
-        Debug.Log(_currentPoints);
-        CurrentBetIndex = CurrentBetIndex;
-        _currentPointsText.text = _currentPoints + "Pts";
+        
     }
 
     /// <summary>

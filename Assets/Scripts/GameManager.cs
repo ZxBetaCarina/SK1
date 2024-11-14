@@ -87,6 +87,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void LoadLevel0()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void Pause()
     {
