@@ -12,15 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1.unity
     guid: 80ad404e5422fbe45b6d51d6e2adf4e3
   - enabled: 1
-    path: Assets/Scenes/Bonus 2 demo.unity
-    guid: ca633406f98faf14793df561aa42d632
+    path: Assets/Scenes/Bonus 2.unity
+    guid: ccde6b0fb4deab5408f8ecc57956239d
   - enabled: 1
-    path: Assets/Scenes/Bonus 3 demo.unity
-    guid: 53bb727dc747a1b43bee5cbd9361888e
+    path: Assets/Scenes/Bonus 3.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/shuffle the cube.unity
     guid: d778c14a7d1215b4ea1248c3684c2529
   - enabled: 1
     path: Assets/Scenes/free spin.unity
     guid: 0401a357e2a346b4d8a391cc6d29f5af
+  - enabled: 1
+    path: Assets/Scenes/Bonus 2 demo.unity
+    guid: ca633406f98faf14793df561aa42d632
+  - enabled: 1
+    path: Assets/Scenes/Bonus 3 demo.unity
+    guid: 53bb727dc747a1b43bee5cbd9361888e
   m_configObjects: {}

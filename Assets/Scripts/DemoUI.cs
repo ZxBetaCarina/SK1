@@ -54,13 +54,13 @@ public class DemoUI : MonoBehaviour
 
     private void ChangeToScene2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(6);
         panel.SetActive(false);
     }
 
     private void ChangeToScene3()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(7);
         panel.SetActive(false);
     }
 
