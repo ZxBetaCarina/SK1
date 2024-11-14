@@ -1,3 +1,4 @@
+using System;
 using AstekUtility.ServiceLocatorTool;
 using RubicsCube;
 using System.Collections;
@@ -123,9 +124,9 @@ public class UIManager : MonoBehaviour
         _skipPanel.SetActive(false);
         _showRubicButton.SetActive(false);
         _spinButton.gameObject.SetActive(true);
+        _instructionButton.interactable = true;
         // StartCoroutine(nameof(DelaySpinButton));
         _refreshButton.interactable = true;
-        _instructionButton.interactable = true;
         RubicMode = false;
         _movesLeft = 10;
         yield return null;
@@ -170,6 +171,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         _spinButton.interactable = true;
+        _instructionButton.interactable = true;
     }
 
     public void CloseRubicMode()
@@ -205,7 +207,7 @@ public class UIManager : MonoBehaviour
         ImageCylinderSpawner.Instance.SpinAllowed = true;
         ToggleBool();
         CheckForWinningPatterns.INSTANCE._spin_btn_img.sprite = CheckForWinningPatterns.INSTANCE._Spin_Buttons[0];
-        _instructionButton.interactable = true;
+        _instructionButton.interactable = false;
 
         _winningPanelDelay = 0f;
         //CheckForWinningPatterns.INSTANCE._reveal_button.gameObject.SetActive(true);
@@ -219,6 +221,7 @@ public class UIManager : MonoBehaviour
             _followPanel.SetActive(true);
             Demoshuffle.SetActive(true);
             _spinButton.interactable = true;
+            _instructionButton.interactable = true;
             _previewButton.interactable = false;
             _refreshButton.interactable = false;
         }        
@@ -236,6 +239,7 @@ public class UIManager : MonoBehaviour
         print("Spin OFF Start Free Spin");
         _spinButton.gameObject.SetActive(false);
         _spinButton.interactable = false;
+        _instructionButton.interactable = false;
         yield return new WaitForSeconds(2f);
         _freeSpinImage.SetActive(false);
     }
@@ -248,6 +252,7 @@ public class UIManager : MonoBehaviour
         }
         print("Spin OFF Turn On Helper Button");
         _spinButton.interactable = false;
+        _instructionButton.interactable = false;
         _refreshButton.interactable = false;
         //nstructionButton.interactable = false;
         _revealbutton.SetActive(true);
@@ -263,8 +268,8 @@ public class UIManager : MonoBehaviour
 
         print("Spin OFF On Pattern Found");
         _spinButton.interactable = false;
-        _refreshButton.interactable = false;
         _instructionButton.interactable = false;
+        _refreshButton.interactable = false;
         RubicMode = false;
         Debug.Log(CheckForWinningPatterns.INSTANCE.isBonus);
         if (!CheckForWinningPatterns.INSTANCE.isBonus)
@@ -325,6 +330,7 @@ public class UIManager : MonoBehaviour
         TurnOnHelperButtons();
         _showRubicButton.SetActive(true);
         _spinButton.interactable = false;
+        _instructionButton.interactable = false;
         _refreshButton.interactable = false;
         //nstructionButton.interactable = false;
         _NormalPaytable.gameObject.SetActive(false);
