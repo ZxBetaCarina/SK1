@@ -264,6 +264,8 @@ public class GameController : MonoBehaviour
 
         _patterns = new();
         print(1234);
+        
+        
 
     }
 

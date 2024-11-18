@@ -72,7 +72,10 @@ public class CheckForWinningPatterns : MonoBehaviour
         _reveal_btn_img.sprite = _Reveal_Buttons[1];
         //UIManager.INSTANCE._spinButton.interactable = false;
         _spin_btn_img.sprite = _Spin_Buttons[1];
-        UIManager.INSTANCE._revealbutton.SetActive(false);
+        //UIManager.INSTANCE._revealbutton.SetActive(false);
+        UIManager.INSTANCE._previewButton.interactable=false;
+        
+        
     }
 
     public void ReviewImages(bool ShowReview)

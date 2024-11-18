@@ -19045,7 +19045,7 @@ MonoBehaviour:
   hideIconsParent: {fileID: 1335199564}
   hideGlowyBit: {fileID: 357639632}
   submitCube: {fileID: 927123464}
-  Quit: {fileID: 252705917}
+  Quit: {fileID: 799500508}
   renderPanel: {fileID: 2101797372}
   rubicsTimerBar: {fileID: 1756420556}
   rubicsModeTimer: {fileID: 811848716}
@@ -22562,18 +22562,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 745225551}
         m_TargetAssemblyTypeName: ImageCylinderSpawner, Assembly-CSharp
-        m_MethodName: HitPlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 745225551}
-        m_TargetAssemblyTypeName: ImageCylinderSpawner, Assembly-CSharp
         m_MethodName: StartRotating
         m_Mode: 1
         m_Arguments:
@@ -22587,6 +22575,18 @@ MonoBehaviour:
       - m_Target: {fileID: 745225551}
         m_TargetAssemblyTypeName: ImageCylinderSpawner, Assembly-CSharp
         m_MethodName: Spin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 745225551}
+        m_TargetAssemblyTypeName: ImageCylinderSpawner, Assembly-CSharp
+        m_MethodName: HitPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
