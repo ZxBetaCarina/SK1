@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class DemoUI : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject exit;
     [SerializeField] private Button one;
     [SerializeField] private Button two;
     [SerializeField] private Button three;
@@ -28,6 +29,7 @@ public class DemoUI : MonoBehaviour
     private void Start()
     {
         panel.SetActive(false);
+        exit.SetActive(false);
     }
 
     private void OnEnable()
@@ -50,24 +52,28 @@ public class DemoUI : MonoBehaviour
     {
         SceneManager.LoadScene(5);
         panel.SetActive(false);
+        exit.SetActive(false);
     }
 
     private void ChangeToScene2()
     {
         SceneManager.LoadScene(6);
         panel.SetActive(false);
+        exit.SetActive(false);
     }
 
     private void ChangeToScene3()
     {
         SceneManager.LoadScene(7);
         panel.SetActive(false);
+        exit.SetActive(false);
     }
 
     private void ChangeToScene4()
     {
         SceneManager.LoadScene(4);
         panel.SetActive(false);
+        exit.SetActive(false);
     }
 
     private void Update()
@@ -77,15 +83,24 @@ public class DemoUI : MonoBehaviour
             if (panel.activeSelf)
             {
                 panel.SetActive(false);
+                exit.SetActive(false);
                 return;
             }
 
             panel.SetActive(true);
+            exit.SetActive(true);
         }
     }
     public void shufflethecube()
     {
         SceneManager.LoadScene(4);
         panel.SetActive(false);
+        exit.SetActive(false);
     }
+    public void ExitBtn()
+    {
+        panel.SetActive(false);
+        exit.SetActive(false);
+    }
+    
 }
