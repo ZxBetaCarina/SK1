@@ -195,7 +195,7 @@ public class TicTacToeInteraction : MonoBehaviour
         }
         else
         {
-            AnswerSelectedMessage = $"Congratulations! You have created the best spot.";
+            AnswerSelectedMessage = $"And you have made the best spot.";
         }
     }
 
