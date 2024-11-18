@@ -244,6 +244,7 @@ public class UIManager : MonoBehaviour
                 GameController.Instance._maxBet.interactable = true;
                 GameController.Instance._minBet.interactable = true;
             }
+            
         }        
     }
 

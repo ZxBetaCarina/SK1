@@ -193,6 +193,10 @@ public class TicTacToeInteraction : MonoBehaviour
             
             Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
         }
+        else
+        {
+            AnswerSelectedMessage = $"Congratulations! You have created the best spot.";
+        }
     }
 
     private IEnumerator Timer(float netTime)

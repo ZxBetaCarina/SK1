@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
             Instance = this;
         }
         CurrentBetIndex = 0;
+        _exit_button.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -126,6 +127,7 @@ public class GameController : MonoBehaviour
         Debug.Log(_currentPoints);
         CurrentBetIndex = CurrentBetIndex;
         _currentPointsText.text = _currentPoints + "Pts";
+        
 
     }
     
@@ -147,7 +149,18 @@ public class GameController : MonoBehaviour
                 timerText.text = "";
             }
         }
+
         
+        
+    }
+
+    public void OnNoBalance()
+    {
+        if (_currentPoints <= 0&& !_exit_button.activeSelf)
+        {
+            _exit_button.gameObject.SetActive(true);
+            Debug.Log("insufitient balance");
+        }
     }
 
     /// <summary>
@@ -290,6 +303,7 @@ public class GameController : MonoBehaviour
 
             PlayerStats.Instance.SetBetAmount(_betPoints[CurrentBetIndex]);
             PlayerPrefs.SetInt("LastBetIndex",CurrentBetIndex);
+            
         }
 
     }
