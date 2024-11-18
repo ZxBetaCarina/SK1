@@ -11,6 +11,8 @@ using Gameplay;
 public class GameController : MonoBehaviour
 {
     public float _reveal_time;
+    
+    public static GameController INSTANCE { get; private set; }
 
     public GameObject targetObject;  // Reference to the GameObject to be disabled/enabled
     public Button disableButton;     // Reference to the UI button for disabling
@@ -26,10 +28,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bettingInput;
     // [SerializeField] private TextMeshProUGUI CoolTimer;
 
-    [SerializeField] private Button _increaseBetButton;
-    [SerializeField] private Button _maxBet;
-    [SerializeField] private Button _minBet;
-    [SerializeField] private Button _decreaseBetButton;
+    [SerializeField] public Button _increaseBetButton;
+    [SerializeField] public Button _maxBet;
+    [SerializeField] public Button _minBet;
+    [SerializeField] public Button _decreaseBetButton;
     [SerializeField] private TextMeshProUGUI _totalBet;
     [SerializeField] private TextMeshProUGUI _currentPointsText;
     [SerializeField] private GameObject coinImages;

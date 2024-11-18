@@ -227,6 +227,23 @@ public class UIManager : MonoBehaviour
             _previewButton.interactable = true;
             Quit.SetActive(true);
             _refreshButton.interactable = true;
+            GameController.Instance._increaseBetButton.interactable = true;
+            GameController.Instance._decreaseBetButton.interactable = true;
+            if (GameController.Instance.CurrentBetIndex == 0)
+            {
+                GameController.Instance._minBet.interactable = false;
+                GameController.Instance._maxBet.interactable = true;
+            }
+            else if (GameController.Instance.CurrentBetIndex == 5)
+            {
+                GameController.Instance._maxBet.interactable = false;
+                GameController.Instance._minBet.interactable = true;
+            }
+            else
+            {
+                GameController.Instance._maxBet.interactable = true;
+                GameController.Instance._minBet.interactable = true;
+            }
         }        
     }
 
