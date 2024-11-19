@@ -508,6 +508,7 @@ void SpawnImagesOnCylinder(Vector3 spawnPosition, int index, Transform parentTra
 {
     float angleIncrement = 360f / numberOfImages;
 
+    // Create a parent GameObject for the cylinder
     GameObject cylinderParent = new GameObject("CylinderParent" + index);
     cylinderParent.transform.position = cylinderSpawnPoints[index];
     cylinderParents[index] = cylinderParent.transform;  // Store the reference to the parent
@@ -516,53 +517,57 @@ void SpawnImagesOnCylinder(Vector3 spawnPosition, int index, Transform parentTra
     // Set the parent transform for the cylinder
     cylinderParent.transform.SetParent(parentTransform);
 
-    // Create a list of indices to prevent consecutive duplicates
-    List<int> availableIndices = new List<int>();
-
+    GameObject lastPrefab = null;
     for (int i = 0; i < numberOfImages; i++)
     {
+        // Calculate angle and position for the current image
         float angle = i * angleIncrement;
         float x = Mathf.Sin(Mathf.Deg2Rad * angle) * cylinderRadius;
         float z = Mathf.Cos(Mathf.Deg2Rad * angle) * cylinderRadius;
-        float zero = -0.03f, one = 0.02f, two = 0.09f;
-        Vector3 imageSpawnPosition = spawnPosition + new Vector3(x, index == 0 ? zero : index == 1 ? one : two, z);  // Offset image position relative to cylinder
+
+        // Determine vertical offset based on the index
+        float offsetY = index == 0 ? -0.03f : index == 1 ? 0.02f : 0.09f;
+        Vector3 imageSpawnPosition = spawnPosition + new Vector3(x, offsetY, z);
         Quaternion spawnRotation = Quaternion.Euler(0f, -angle, 0f);
 
-        // Reset the available indices if the list is empty
-        if (availableIndices.Count == 0)
-        {
-            int length = IsBonus1 ? imagePrefabsFreeSpin.Length : imagePrefabs.Length;
-            for (int j = 0; j < length; j++)
-            {
-                availableIndices.Add(j);
-            }
-        }
-
-        // Select a random index from the available list
-        int randomIndex = UnityEngine.Random.Range(0, availableIndices.Count);
-        int selectedPrefabIndex = availableIndices[randomIndex];
-        availableIndices.RemoveAt(randomIndex);
-
-        GameObject imageObject;
+        // Determine the prefab to use
+        GameObject selectedPrefab;
         if (IsBonus1)
         {
-            imageObject = Instantiate(imagePrefabsFreeSpin[selectedPrefabIndex], imageSpawnPosition, spawnRotation);
+            // Select prefab from imagePrefabsFreeSpin
+            int randomSetIndex = UnityEngine.Random.Range(0, imagePrefabsFreeSpin.Length);
+            if (lastPrefab == null) lastPrefab = imagePrefabsFreeSpin[randomSetIndex];
+            if (imagePrefabsFreeSpin[randomSetIndex] == lastPrefab)
+            {
+                randomSetIndex = UnityEngine.Random.Range(0, imagePrefabsFreeSpin.Length);
+            }
+            selectedPrefab = imagePrefabsFreeSpin[randomSetIndex];
         }
         else
         {
-            imageObject = Instantiate(imagePrefabs[selectedPrefabIndex], imageSpawnPosition, spawnRotation);
+            // Use weighted randomization for prefab selection
+            selectedPrefab = GetWeightedRNG.GetValue(slotRNGItems.ItemsForRNG);
+            if (selectedPrefab == lastPrefab)
+            {
+                selectedPrefab = GetWeightedRNG.GetValue(slotRNGItems.ItemsForRNG);
+            }
         }
+        lastPrefab = selectedPrefab;
+
+        // Instantiate the prefab
+        GameObject imageObject = Instantiate(selectedPrefab, imageSpawnPosition, spawnRotation);
         _spawnedIcons[i] = imageObject.GetComponent<Icons>();
         imageObject.transform.parent = cylinderParent.transform;  // Set the cylinder's parent as the parent
 
-        // Calculate the angle between the center and the current image
-        float angleToCenter = Mathf.Atan2(imageSpawnPosition.z - spawnPosition.z, imageSpawnPosition.x - spawnPosition.x) * Mathf.Rad2Deg;
         // Rotate the image to face the center
+        float angleToCenter = Mathf.Atan2(imageSpawnPosition.z - spawnPosition.z, imageSpawnPosition.x - spawnPosition.x) * Mathf.Rad2Deg;
         imageObject.transform.rotation = Quaternion.Euler(180, 90 - angleToCenter, 90);
     }
-    cylinderParent.transform.localPosition = Vector3.zero;  // Set local position to zero
-    cylinderParent.transform.localRotation = Quaternion.identity;  // Set local rotation to identity
-    cylinderParent.transform.localScale = new Vector3(1, 1, 1);
+
+    // Reset the cylinder parent transform
+    cylinderParent.transform.localPosition = Vector3.zero;
+    cylinderParent.transform.localRotation = Quaternion.identity;
+    cylinderParent.transform.localScale = Vector3.one;
 }
 
 /*
