@@ -13555,10 +13555,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1649340585}
   m_HandleRect: {fileID: 1471615804}
   m_Direction: 0
-  m_MinValue: 20
-  m_MaxValue: 200
+  m_MinValue: 0
+  m_MaxValue: 2
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14756,6 +14756,7 @@ MonoBehaviour:
   _currentCylinder: 0
   slotAudio: {fileID: 828720081}
   speedSlider: {fileID: 682090247}
+  delay: 2
   speedText: {fileID: 1070452718}
   muteButton: {fileID: 1505383071}
   isMuted: 0

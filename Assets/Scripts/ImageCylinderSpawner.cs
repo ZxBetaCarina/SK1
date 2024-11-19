@@ -41,6 +41,7 @@ public class ImageCylinderSpawner : MonoBehaviour
     private GameObject allCylindersParent;  // New parent for all cylinders
 
     public Slider speedSlider;  // Reference to the UI slider for speed adjustment
+    public float delay = 2f;
     public TMP_Text speedText;  // Reference to the UI text for displaying speed
     //public TMP_Text coinsText;  // Reference to the UI text for displaying coins
     private int coins = 100;  // Initial coins
@@ -797,7 +798,7 @@ void SpawnImagesOnCylinder(Vector3 spawnPosition, int index, Transform parentTra
             //cylinderRotationStates[i] = false;
 
             // Delay for a short duration before stopping the next cylinder
-            yield return new WaitForSeconds(2.0f); // Adjust the duration as needed
+            yield return new WaitForSeconds(delay); // Adjust the duration as needed
 
             // Check for collisions with centerpoint
             if (_currentCylinder < numberOfCylinders)
@@ -834,9 +835,9 @@ void SpawnImagesOnCylinder(Vector3 spawnPosition, int index, Transform parentTra
     }
     void ChangeRotationSpeed(float newSpeed)
     {
-        rotationSpeed = newSpeed;
+        delay = newSpeed;
         // Update the speed text
-        speedText.text = $"Speed: {rotationSpeed}";
+        speedText.text = $"Speed: {delay}";
     }
 
     void UpdateCoinsText()
