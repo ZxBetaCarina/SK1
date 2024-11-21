@@ -501,7 +501,7 @@ namespace RubicsCube
         public async void DetectSprite()
         {
             _shufflingPanel.SetActive(true);
-            int randomShuffleAmount = UnityEngine.Random.Range(10, 20);
+            int randomShuffleAmount = UnityEngine.Random.Range(15, 25);
             for (int i = 0; i < randomShuffleAmount; i++)
             {
                 //Gaurd clause to prevent memory leaks

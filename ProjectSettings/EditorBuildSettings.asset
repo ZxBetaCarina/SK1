@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/shuffle the cube.unity
     guid: d778c14a7d1215b4ea1248c3684c2529
   - enabled: 1
-    path: Assets/Scenes/free spin.unity
-    guid: 0401a357e2a346b4d8a391cc6d29f5af
+    path: Assets/Scenes/free spin demo.unity
+    guid: ac0efd96b98bc694fa8e6edc03e2b5e2
   - enabled: 1
     path: Assets/Scenes/Bonus 2 demo.unity
     guid: ca633406f98faf14793df561aa42d632

@@ -837,7 +837,7 @@ void SpawnImagesOnCylinder(Vector3 spawnPosition, int index, Transform parentTra
     {
         delay = newSpeed;
         // Update the speed text
-        speedText.text = $"Speed: {delay}";
+        speedText.text = $"Delay: {delay}";
     }
 
     void UpdateCoinsText()
