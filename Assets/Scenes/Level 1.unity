@@ -14666,29 +14666,29 @@ MonoBehaviour:
   slotRNGItems:
     ItemsForRNG:
     - Item: {fileID: 345101339025488716, guid: ccebfee176da26043a6ca7f290c63819, type: 3}
-      Probability: 27
+      Probability: 14
     - Item: {fileID: 537987407434377474, guid: c70dacf454f35be4489f9371348f8432, type: 3}
-      Probability: 24
+      Probability: 13
     - Item: {fileID: 5716216400360466020, guid: a0f45a8c3103ebd43beec45e5dbbb6a1, type: 3}
-      Probability: 21
+      Probability: 11
     - Item: {fileID: 7181011410850676101, guid: cfdfaec24ec079c48af5079ca523ecf1, type: 3}
-      Probability: 18
+      Probability: 10
     - Item: {fileID: 8738978324251238539, guid: b70926e193b7f6b4897c63f8567184d3, type: 3}
-      Probability: 15
-    - Item: {fileID: 1896823859611595537, guid: 31600ce61afb28741abb8b3f73c324cc, type: 3}
-      Probability: 12
-    - Item: {fileID: 2731261227186135901, guid: 3b898cf24ceb3424984fbb3a96f9bcf8, type: 3}
       Probability: 9
+    - Item: {fileID: 1896823859611595537, guid: 31600ce61afb28741abb8b3f73c324cc, type: 3}
+      Probability: 8
+    - Item: {fileID: 2731261227186135901, guid: 3b898cf24ceb3424984fbb3a96f9bcf8, type: 3}
+      Probability: 7
     - Item: {fileID: 2731261227186135901, guid: 887ed932f8c4a7445b0874cfd7f0eda8, type: 3}
-      Probability: 6
+      Probability: 7
     - Item: {fileID: 2731261227186135901, guid: f03f5181769dd444fbf584a4f1ffb44d, type: 3}
-      Probability: 3
+      Probability: 6
     - Item: {fileID: 1896823859611595537, guid: cb1b8758f4a57994188caceb6f4fbbcd, type: 3}
-      Probability: 0
+      Probability: 5
     - Item: {fileID: 1896823859611595537, guid: 6f79d9410ae699945983fc19cb8ea8e1, type: 3}
-      Probability: 0
+      Probability: 5
     - Item: {fileID: 1896823859611595537, guid: ff02338b2d77c314e8b43b35e9b1aca7, type: 3}
-      Probability: 0
+      Probability: 5
   _imageLayer:
     serializedVersion: 2
     m_Bits: 64
