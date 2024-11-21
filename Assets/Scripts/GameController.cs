@@ -64,6 +64,8 @@ public class GameController : MonoBehaviour
     public bool JackPotMode;
 
     internal List<GameObject> _highlight_objects = new();
+    
+    [SerializeField] private GameObject lowBalanceUI;
 
 
     public void AddPatternPositions(Vector3 position)
@@ -287,25 +289,30 @@ public class GameController : MonoBehaviour
 
     public void FinaliseBetOnClickSpin()
     {
-        if (_currentPoints >= _currentPoints - _betPoints[CurrentBetIndex / 100])
+        // Check if the balance is 0 or will drop below 0 after betting
+        if (_currentPoints - _betPoints[CurrentBetIndex] < 0)
         {
-            if (_currentPoints - _betPoints[CurrentBetIndex] / 100 < 0) return;
-            _currentPoints -= _betPoints[CurrentBetIndex] / 1;
-            _currentPointsText.text = _currentPoints + "Pts";
-            AvailableCredit();
-            _increaseBetButton.interactable = false;
-            _decreaseBetButton.interactable = false;
-            _maxBet.interactable = false;
-            _minBet.interactable = false;
-            CheckForWinningPatterns.INSTANCE.FinaliseBet();
+            // Activate low balance UI
+            lowBalanceUI.SetActive(true);
 
-            BetConfirmed?.Invoke();
-
-            PlayerStats.Instance.SetBetAmount(_betPoints[CurrentBetIndex]);
-            PlayerPrefs.SetInt("LastBetIndex",CurrentBetIndex);
-            
+            Debug.Log("Insufficient balance. Please add more points.");
+            return; // Prevent the rest of the function from executing
         }
 
+        // Proceed with the rest of the function if balance is sufficient
+        _currentPoints -= _betPoints[CurrentBetIndex];
+        _currentPointsText.text = _currentPoints + "Pts";
+        AvailableCredit();
+        _increaseBetButton.interactable = false;
+        _decreaseBetButton.interactable = false;
+        _maxBet.interactable = false;
+        _minBet.interactable = false;
+        CheckForWinningPatterns.INSTANCE.FinaliseBet();
+
+        BetConfirmed?.Invoke();
+
+        PlayerStats.Instance.SetBetAmount(_betPoints[CurrentBetIndex]);
+        PlayerPrefs.SetInt("LastBetIndex", CurrentBetIndex);
     }
 
     public void OnClickReviewButton()
