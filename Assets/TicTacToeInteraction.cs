@@ -22,9 +22,9 @@ public class TicTacToeInteraction : MonoBehaviour
     [SerializeField] public GameObject fx;
 
     public string AnswerSelectedMessage = null;
+    public string BestSpotName;
     private bool answerSelected = false;
     private bool bestAnswerSelected = false;
-    public string bestansname;
 
     bool _selected_best_answer;
     
@@ -189,13 +189,13 @@ public class TicTacToeInteraction : MonoBehaviour
             bestAnswerSelected = true;
             //bestansname = bestAnswer.sprite.Name2Show;
 
-            AnswerSelectedMessage = $"And the {bestAnswer.sprite.Name2Show} was the best spot.";
+            BestSpotName = $"And the {bestAnswer.sprite.Name2Show} was the best spot.";
             
-            Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
+            //Debug.Log("Best Answer Icon name2: " + bestAnswer.sprite.Name2Show);
         }
         else
         {
-            AnswerSelectedMessage = $"And you have made the best spot.";
+            BestSpotName = $"And you have made the best spot.";
         }
     }
 

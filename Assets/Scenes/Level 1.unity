@@ -19272,7 +19272,7 @@ MonoBehaviour:
   _followPanel: {fileID: 882000957}
   Demoshuffle: {fileID: 640754789}
   FreeSpinButton: {fileID: 0}
-  _winningText: {fileID: 1050019944}
+  BestSpotText: {fileID: 1050019944}
   _winningPanel: {fileID: 1898258624}
   _message: {fileID: 1159263161}
   _waitingText: {fileID: 427161532}
@@ -20929,7 +20929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And you have made the best spot.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d26485a9a8ce0344ba2fde98c8585cf1, type: 2}
   m_sharedMaterial: {fileID: -545229029575315993, guid: d26485a9a8ce0344ba2fde98c8585cf1, type: 2}
@@ -35098,7 +35098,7 @@ MonoBehaviour:
   timebartime: 5
   fx: {fileID: 0}
   AnswerSelectedMessage: 
-  bestansname: 
+  BestSpotName: And you have made the best spot.
 --- !u!1 &1695421133
 GameObject:
   m_ObjectHideFlags: 0

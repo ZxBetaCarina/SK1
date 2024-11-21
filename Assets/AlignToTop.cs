@@ -17,5 +17,15 @@ namespace RubicsCube
                 }
             }
         }
+        public void Alignup()
+        {
+            for (int i = 4; i < 6; i++)
+            {
+                if (!Physics.Raycast(transform.position, transform.up, out RaycastHit hit, Mathf.Infinity, alignmentLayer))
+                {
+                    transform.Rotate(0, 0, 90);
+                }
+            }
+        }
     }
 }

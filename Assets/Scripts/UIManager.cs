@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     public GameObject Demoshuffle;
     public GameObject FreeSpinButton;
 
-    [SerializeField] private TextMeshProUGUI _winningText;
+    
+    [SerializeField] private TextMeshProUGUI BestSpotText;
     [SerializeField] private GameObject _winningPanel;
     [SerializeField] private TMP_Text _message;
     [SerializeField] private TextMeshProUGUI _waitingText;
@@ -226,7 +227,7 @@ public class UIManager : MonoBehaviour
             _instructionButton.interactable = true;
             _previewButton.interactable = true;
             Quit.SetActive(true);
-            _refreshButton.interactable = true;
+            _refreshButton.interactable = false;
             GameController.Instance._increaseBetButton.interactable = true;
             GameController.Instance._decreaseBetButton.interactable = true;
             if (GameController.Instance.CurrentBetIndex == 0)
@@ -299,20 +300,20 @@ public class UIManager : MonoBehaviour
         if (!CheckForWinningPatterns.INSTANCE.isBonus)
         {
             string msg;
-            if (_interaction.AnswerSelectedMessage != null)
+            if (_interaction.BestSpotName != null)
             {
-                msg = _interaction.AnswerSelectedMessage;
+                msg = _interaction.BestSpotName;
             }
             else
             {
-                msg = _winningMsg;
+                msg = _interaction.BestSpotName;
             }
             print("Enable Winning Panel" + msg);
             _winningPanel.SetActive(true);
 
             print("Turn on WINNING PANEL");
 
-            _winningText.text = msg;
+            BestSpotText.text = msg;
         }
         //StopCoroutine(WaitForUserInput());
     }
