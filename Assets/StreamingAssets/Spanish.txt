@@ -1,5 +1,5 @@
 skill_game = Juego de habilidad
-total_balance = Saldo total
+total_balance = Crédito
 points = Puntos
 withdraw = Retirar
 max = Máx

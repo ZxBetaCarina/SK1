@@ -1,5 +1,5 @@
 skill_game = Игра навыков
-total_balance = Общий баланс
+total_balance = Кредит
 points = Очки
 withdraw = Вывести
 max = Макс

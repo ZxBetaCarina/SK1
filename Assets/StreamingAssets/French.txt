@@ -1,5 +1,5 @@
 skill_game = Jeu de compétence
-total_balance = Solde total
+total_balance = Crédit
 points = Points
 withdraw = Retrait
 max = Max

@@ -1,5 +1,5 @@
 skill_game = Geschicklichkeitsspiel
-total_balance = Gesamtbilanz
+total_balance = Kredit
 points = Punkte
 withdraw = Abheben
 max = Max
