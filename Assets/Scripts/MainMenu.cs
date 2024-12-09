@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetFloat("Balance", 500);
+        PlayerPrefs.SetInt("FirstGame", 1); // 0 represents false
+        PlayerPrefs.Save();
 
     }
 
