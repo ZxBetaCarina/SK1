@@ -69,6 +69,7 @@ public class UIManager : MonoBehaviour
     private int _movesLeft;
 
     public bool stopTimer = false;
+    private bool firstgame = true;
 
     private void Awake()
     {
@@ -114,6 +115,16 @@ public class UIManager : MonoBehaviour
         //    PlayerPrefs.SetInt("FollowMeCheck", FollowMeCheck ? 1 : 0); // Convert bool to int
         //    PlayerPrefs.Save(); // Save changes
         //}
+        if (PlayerPrefs.HasKey("FirstGame"))
+        {
+            firstgame = PlayerPrefs.GetInt("FirstGame") == 1; // Convert saved int value to bool
+        }
+        else
+        {
+            firstgame = true; // Default value if not previously saved
+            PlayerPrefs.SetInt("FirstGame", firstgame ? 1 : 0); // Save the default value
+            PlayerPrefs.Save(); // Ensure changes are written to disk
+        }
         foreach (var rubicBtn in RubicControllers)
         {
             rubicBtn.SetActive(false);
@@ -128,10 +139,33 @@ public class UIManager : MonoBehaviour
         _instructionButton.interactable = true;
         //_previewButton.interactable = true;
         // StartCoroutine(nameof(DelaySpinButton));
-        _refreshButton.interactable = true;
+        if (firstgame == true)
+        {
+            _refreshButton.interactable = false;
+        }
+        else
+        {
+            _refreshButton.interactable = true;
+        }
+        
         RubicMode = false;
         _movesLeft = 10;
         yield return null;
+    }
+    public void OnFirstGame()
+    {
+        firstgame = false;
+        PlayerPrefs.SetInt("FirstGame", firstgame ? 1 : 0); // Save the value in PlayerPrefs
+        PlayerPrefs.Save(); 
+    }
+    private void OnApplicationQuit()
+    {
+        // Delete the "FirstGame" key from PlayerPrefs on application exit
+        if (PlayerPrefs.HasKey("FirstGame"))
+        {
+            PlayerPrefs.DeleteKey("FirstGame");
+            PlayerPrefs.Save(); // Ensure changes are written to disk
+        }
     }
 
     private void OnFollowTimerEnded()
