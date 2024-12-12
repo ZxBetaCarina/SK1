@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 118954426}
   - component: {fileID: 118954425}
   - component: {fileID: 118954424}
+  - component: {fileID: 118954427}
   m_Layer: 5
   m_Name: Joker
   m_TagString: Untagged
@@ -267,6 +268,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118954422}
   m_CullTransparentMesh: 1
+--- !u!114 &118954427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118954422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 1031114368}
+  isWiggling: 0
 --- !u!1 &128498923
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +431,7 @@ GameObject:
   - component: {fileID: 140331785}
   - component: {fileID: 140331784}
   - component: {fileID: 140331783}
+  - component: {fileID: 140331786}
   m_Layer: 5
   m_Name: King (2)
   m_TagString: Untagged
@@ -549,6 +565,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140331781}
   m_CullTransparentMesh: 1
+--- !u!114 &140331786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140331781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 1221043009}
+  isWiggling: 0
 --- !u!1 &156746709
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +591,7 @@ GameObject:
   - component: {fileID: 156746713}
   - component: {fileID: 156746712}
   - component: {fileID: 156746711}
+  - component: {fileID: 156746714}
   m_Layer: 5
   m_Name: King (4)
   m_TagString: Untagged
@@ -694,6 +725,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156746709}
   m_CullTransparentMesh: 1
+--- !u!114 &156746714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156746709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 611164491}
+  isWiggling: 0
 --- !u!1 &171777156
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +903,7 @@ GameObject:
   - component: {fileID: 388038461}
   - component: {fileID: 388038460}
   - component: {fileID: 388038459}
+  - component: {fileID: 388038462}
   m_Layer: 5
   m_Name: Queen
   m_TagString: Untagged
@@ -991,6 +1037,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388038457}
   m_CullTransparentMesh: 1
+--- !u!114 &388038462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388038457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 1214112097}
+  isWiggling: 0
 --- !u!1 &411390746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1257,7 @@ GameObject:
   - component: {fileID: 530631550}
   - component: {fileID: 530631549}
   - component: {fileID: 530631548}
+  - component: {fileID: 530631551}
   m_Layer: 5
   m_Name: Ace
   m_TagString: Untagged
@@ -1330,6 +1391,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530631546}
   m_CullTransparentMesh: 1
+--- !u!114 &530631551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530631546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 944726133}
+  isWiggling: 0
 --- !u!1 &568198343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,6 +3420,7 @@ GameObject:
   - component: {fileID: 1909378870}
   - component: {fileID: 1909378869}
   - component: {fileID: 1909378868}
+  - component: {fileID: 1909378871}
   m_Layer: 5
   m_Name: King (1)
   m_TagString: Untagged
@@ -3478,6 +3554,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909378866}
   m_CullTransparentMesh: 1
+--- !u!114 &1909378871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909378866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 2085568013}
+  isWiggling: 0
 --- !u!1 &1949570959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3580,7 @@ GameObject:
   - component: {fileID: 1949570963}
   - component: {fileID: 1949570962}
   - component: {fileID: 1949570961}
+  - component: {fileID: 1949570964}
   m_Layer: 5
   m_Name: King (3)
   m_TagString: Untagged
@@ -3623,6 +3714,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949570959}
   m_CullTransparentMesh: 1
+--- !u!114 &1949570964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949570959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 1479352214}
+  isWiggling: 0
 --- !u!1 &2017235039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,6 +3815,7 @@ GameObject:
   - component: {fileID: 2069858936}
   - component: {fileID: 2069858935}
   - component: {fileID: 2069858934}
+  - component: {fileID: 2069858937}
   m_Layer: 5
   m_Name: King
   m_TagString: Untagged
@@ -3843,6 +3949,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069858932}
   m_CullTransparentMesh: 1
+--- !u!114 &2069858937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069858932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483243c1c76cac4a828b1f1ace4cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childcard: {fileID: 2017235039}
+  isWiggling: 0
 --- !u!1 &2085568013
 GameObject:
   m_ObjectHideFlags: 0
