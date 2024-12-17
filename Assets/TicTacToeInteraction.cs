@@ -28,6 +28,9 @@ public class TicTacToeInteraction : MonoBehaviour
 
     bool _selected_best_answer;
     
+    public GameObject indicatorSpritePrefab; // Prefab for the indicator sprite
+    public float indicatorYOffset = 0.1f; 
+    
 
     public async void SelectPosition(Transform pos)
     {
@@ -116,6 +119,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 if (hit && hit.collider.GetComponent<SpriteRenderer>().sprite != bestAnswer.sprite.IconSprite)
                 {
                     hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
+                    SpawnIndicator(hit.collider.transform);
                     isDone = true;
                     break;
                 }
@@ -129,11 +133,23 @@ public class TicTacToeInteraction : MonoBehaviour
                     if (hit)
                     {
                         hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
+                        //SpawnIndicator(hit.collider.transform);
                     }
                 }
             }
         }
         // CheckForWinningPatterns.PatternNotFound.Invoke();            ///************************* TEMP REMOVED *************************///
+    }
+    private void SpawnIndicator(Transform targetTransform)
+    {
+        if (indicatorSpritePrefab != null)
+        {
+            // Instantiate the indicator sprite
+            GameObject indicator = Instantiate(indicatorSpritePrefab, targetTransform.position, Quaternion.identity);
+        
+            // Optionally, apply a slight vertical offset to position the indicator above the best answer sprite
+            indicator.transform.position = new Vector3(targetTransform.position.x, targetTransform.position.y , targetTransform.position.z + indicatorYOffset);
+        }
     }
 
     IEnumerator StartTimer()
