@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ public class TicTacToeInteraction : MonoBehaviour
     public string AnswerSelectedMessage = null;
     public string BestSpotName;
     private bool answerSelected = false;
+    private bool bestAnswerExist = false;
     private bool bestAnswerSelected = false;
 
     bool _selected_best_answer;
@@ -76,6 +78,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 
             }
         }
+        Debug.Log($"Selected Answer: {selectedAns.Item1.Name}, Best Answer: {bestAnswer.sprite.Name}");
 
         answerSelected = true;
         Deactivate();
@@ -84,6 +87,7 @@ public class TicTacToeInteraction : MonoBehaviour
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
                 //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
+                bestAnswerSelected = true;
             }
             else
             {
@@ -110,6 +114,9 @@ public class TicTacToeInteraction : MonoBehaviour
 
     public void OnNotSelectingBestAnswer()
     {
+        if (bestAnswerSelected == false)
+        {
+        
         if (bestAnswer.sprite != null)
         {
             bool isDone = false;
@@ -118,7 +125,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(origin.position, Vector3.forward);
                 if (hit && hit.collider.GetComponent<SpriteRenderer>().sprite != bestAnswer.sprite.IconSprite)
                 {
-                    //hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
+                    hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
                     SpawnIndicator(hit.collider.transform);
                     isDone = true;
                     break;
@@ -132,14 +139,21 @@ public class TicTacToeInteraction : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(origin.position, Vector3.forward);
                     if (hit)
                     {
-                        hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
+                        //hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
                         //SpawnIndicator(hit.collider.transform);
                     }
                 }
             }
         }
+        }
         // CheckForWinningPatterns.PatternNotFound.Invoke();            ///************************* TEMP REMOVED *************************///
     }
+
+    private void Update()
+    {
+        //Debug.Log(bestAnswerSelected);
+    }
+
     private void SpawnIndicator(Transform targetTransform)
     {
         if (indicatorSpritePrefab != null)
@@ -180,7 +194,7 @@ public class TicTacToeInteraction : MonoBehaviour
 
     private void FindBestAnswers()
     {
-        if (bestAnswerSelected)
+        if (bestAnswerExist)
         {
             return;
         }
@@ -202,7 +216,7 @@ public class TicTacToeInteraction : MonoBehaviour
         if (bestAns.sprite != null)
         {
             bestAnswer = bestAns;
-            bestAnswerSelected = true;
+            bestAnswerExist = true;
             //bestansname = bestAnswer.sprite.Name2Show;
 
             BestSpotName = $"And the {bestAnswer.sprite.Name2Show} was the best spot.";
