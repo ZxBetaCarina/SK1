@@ -33,6 +33,8 @@ public class TicTacToeInteraction : MonoBehaviour
     public GameObject indicatorSpritePrefab; // Prefab for the indicator sprite
     public float indicatorZOffset = -1f; 
     
+    [SerializeField] private TMP_Text resultText;
+    
 
     public async void SelectPosition(Transform pos)
     {
@@ -86,11 +88,13 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
+                resultText.text = $"Correct! {selectedAns.Item1.Name} was the best spot.";
                 //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
                 bestAnswerSelected = true;
             }
             else
             {
+                resultText.text = "Skipped! The best spot was not selected.";
                 //AnswerSelectedMessage = $"And the {bestansname} was the best spot.";
                 //OnNotSelectingBestAnswer();
                 await Task.Delay(1000);
