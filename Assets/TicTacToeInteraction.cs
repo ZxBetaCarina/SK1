@@ -24,13 +24,17 @@ public class TicTacToeInteraction : MonoBehaviour
     public string AnswerSelectedMessage = null;
     public string BestSpotName;
     private bool answerSelected = false;
-    private bool bestAnswerSelected = false;
+    private bool bestAnswerCheck = false;
+    private bool bestAnswerSelected  = false;
 
     bool _selected_best_answer;
+    
+    [SerializeField] private TMP_Text resultText;
     
 
     public async void SelectPosition(Transform pos)
     {
+        
         while (ImageCylinderSpawner.Instance.isRotating)
         {
             await Task.Delay(16);
@@ -40,6 +44,8 @@ public class TicTacToeInteraction : MonoBehaviour
         List<(Icons, RaycastOriginTransforms patterns)> filteredPossiblilities = new List<(Icons, RaycastOriginTransforms patterns)>(possibleIcon);
         (Icons sprite, RaycastOriginTransforms patterns) selectedAns = (null, null);
         Collider2D iconSelectedFromPossiblilities = null;
+        
+        
 
         if (possibleIcon.Count > 0)
         {
@@ -73,6 +79,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 
             }
         }
+        Debug.Log($"Selected Answer: {selectedAns.Item1?.Name}, Best Answer: {bestAnswer.sprite?.Name}");
 
         answerSelected = true;
         Deactivate();
@@ -81,9 +88,13 @@ public class TicTacToeInteraction : MonoBehaviour
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
                 //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
+                bestAnswerSelected = true;
+                resultText.text = $"Right Option";
             }
             else
             {
+                bestAnswerSelected = false;
+                resultText.text = "Skipped Right Option";
                 //AnswerSelectedMessage = $"And the {bestansname} was the best spot.";
                 //OnNotSelectingBestAnswer();
                 await Task.Delay(1000);
@@ -107,6 +118,8 @@ public class TicTacToeInteraction : MonoBehaviour
 
     public void OnNotSelectingBestAnswer()
     {
+        if (bestAnswerSelected == false)
+        {
         if (bestAnswer.sprite != null)
         {
             bool isDone = false;
@@ -134,6 +147,7 @@ public class TicTacToeInteraction : MonoBehaviour
             }
         }
         // CheckForWinningPatterns.PatternNotFound.Invoke();            ///************************* TEMP REMOVED *************************///
+    }
     }
 
     IEnumerator StartTimer()
@@ -164,7 +178,7 @@ public class TicTacToeInteraction : MonoBehaviour
 
     private void FindBestAnswers()
     {
-        if (bestAnswerSelected)
+        if (bestAnswerCheck)
         {
             return;
         }
@@ -186,7 +200,7 @@ public class TicTacToeInteraction : MonoBehaviour
         if (bestAns.sprite != null)
         {
             bestAnswer = bestAns;
-            bestAnswerSelected = true;
+            bestAnswerCheck = true;
             //bestansname = bestAnswer.sprite.Name2Show;
 
             BestSpotName = $"And the {bestAnswer.sprite.Name2Show} was the best spot.";
