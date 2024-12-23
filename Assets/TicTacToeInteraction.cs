@@ -80,7 +80,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 
             }
         }
-        Debug.Log($"Selected Answer: {selectedAns.Item1.Name}, Best Answer: {bestAnswer.sprite.Name}");
+//        Debug.Log($"Selected Answer: {selectedAns.Item1.Name}, Best Answer: {bestAnswer.sprite.Name}");
 
         answerSelected = true;
         Deactivate();
