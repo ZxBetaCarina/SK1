@@ -38,6 +38,10 @@ public class TicTacToeInteraction : MonoBehaviour
 
     public async void SelectPosition(Transform pos)
     {
+        if (answerSelected)
+        {
+            return;  // Exit the method if the answer has already been selected.
+        }
         while (ImageCylinderSpawner.Instance.isRotating)
         {
             await Task.Delay(16);
@@ -155,7 +159,7 @@ public class TicTacToeInteraction : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(bestAnswerSelected);
+        //Debug.Log(answerSelected);
     }
 
     private void SpawnIndicator(Transform targetTransform)
