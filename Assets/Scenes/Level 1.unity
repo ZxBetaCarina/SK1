@@ -14686,7 +14686,7 @@ MonoBehaviour:
     - Item: {fileID: 1896823859611595537, guid: cb1b8758f4a57994188caceb6f4fbbcd, type: 3}
       Probability: 5
     - Item: {fileID: 1896823859611595537, guid: 6f79d9410ae699945983fc19cb8ea8e1, type: 3}
-      Probability: 5
+      Probability: 55555
     - Item: {fileID: 1896823859611595537, guid: ff02338b2d77c314e8b43b35e9b1aca7, type: 3}
       Probability: 5
   _imageLayer:
