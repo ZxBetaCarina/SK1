@@ -88,13 +88,13 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
-                resultText.text = $"Correct! {selectedAns.Item1.Name} was the best spot.";
+                resultText.text = $"Correct!";
                 //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
                 bestAnswerSelected = true;
             }
             else
             {
-                resultText.text = "Skipped! The best spot was not selected.";
+                resultText.text = "Skipped!";
                 //AnswerSelectedMessage = $"And the {bestansname} was the best spot.";
                 //OnNotSelectingBestAnswer();
                 await Task.Delay(1000);
@@ -181,8 +181,9 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
         }
-        yield return new WaitForSeconds(1.5f);
         FindBestAnswers();
+        yield return new WaitForSeconds(1.5f);
+        
 
         if (bestAnswer.sprite != null)
         {
