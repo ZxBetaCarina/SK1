@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class TicTacToeInteraction : MonoBehaviour
@@ -30,7 +31,8 @@ public class TicTacToeInteraction : MonoBehaviour
 
     bool _selected_best_answer;
     
-    public GameObject indicatorSpritePrefab; // Prefab for the indicator sprite
+    [FormerlySerializedAs("indicatorSpritePrefab")] public GameObject SkippedindicatorSprite; // Prefab for the indicator sprite
+    public GameObject GotitindicatorSprite; 
     public float indicatorZOffset = -1f; 
     
     [SerializeField] private TMP_Text resultText;
@@ -92,15 +94,27 @@ public class TicTacToeInteraction : MonoBehaviour
         {
             if (bestAnswer.sprite != null && selectedAns.Item1.Name == bestAnswer.sprite.Name)
             {
-                resultText.text = $"Correct!";
+                resultText.text = $"Right Option";
                 //AnswerSelectedMessage =  $"And the {bestansname} was the best spot.";
+                if (iconSelectedFromPossiblilities != null)
+                {
+                    SpawnGotItIndicator(iconSelectedFromPossiblilities.transform);
+                    SpriteRenderer spriteRenderer = iconSelectedFromPossiblilities.GetComponent<SpriteRenderer>();
+                    spriteRenderer.color = Color.green;
+                }
                 bestAnswerSelected = true;
             }
             else
             {
-                resultText.text = "Skipped!";
+                resultText.text = "Skipped Right Option!";
                 //AnswerSelectedMessage = $"And the {bestansname} was the best spot.";
                 //OnNotSelectingBestAnswer();
+                if (iconSelectedFromPossiblilities != null)
+                {
+                    SpawnGotItIndicator(iconSelectedFromPossiblilities.transform);
+                    SpriteRenderer spriteRenderer = iconSelectedFromPossiblilities.GetComponent<SpriteRenderer>();
+                    spriteRenderer.color = Color.green;
+                }
                 await Task.Delay(1000);
             }
             //print(AnswerSelectedMessage);
@@ -119,6 +133,17 @@ public class TicTacToeInteraction : MonoBehaviour
             ImageCylinderSpawner.Instance.CheckWinningCondition();
         }
     }
+    private void SpawnGotItIndicator(Transform targetTransform)
+    {
+        if (GotitindicatorSprite != null)
+        {
+            // Instantiate the GotitindicatorSprite prefab at the selected position
+            GameObject indicator = Instantiate(GotitindicatorSprite, targetTransform.position, Quaternion.identity);
+
+            // Optionally, apply a slight vertical offset to position the indicator above the selected sprite
+            indicator.transform.position = new Vector3(targetTransform.position.x, targetTransform.position.y, targetTransform.position.z + indicatorZOffset);
+        }
+    }
 
     public void OnNotSelectingBestAnswer()
     {
@@ -134,7 +159,7 @@ public class TicTacToeInteraction : MonoBehaviour
                 if (hit && hit.collider.GetComponent<SpriteRenderer>().sprite != bestAnswer.sprite.IconSprite)
                 {
                     hit.collider.GetComponent<SpriteRenderer>().color = Color.red;
-                    SpawnIndicator(hit.collider.transform);
+                    SpawnSkippedIndicator(hit.collider.transform);
                     isDone = true;
                     break;
                 }
@@ -162,12 +187,12 @@ public class TicTacToeInteraction : MonoBehaviour
         //Debug.Log(answerSelected);
     }
 
-    private void SpawnIndicator(Transform targetTransform)
+    private void SpawnSkippedIndicator(Transform targetTransform)
     {
-        if (indicatorSpritePrefab != null)
+        if (SkippedindicatorSprite != null)
         {
             // Instantiate the indicator sprite
-            GameObject indicator = Instantiate(indicatorSpritePrefab, targetTransform.position, Quaternion.identity);
+            GameObject indicator = Instantiate(SkippedindicatorSprite, targetTransform.position, Quaternion.identity);
         
             // Optionally, apply a slight vertical offset to position the indicator above the best answer sprite
             indicator.transform.position = new Vector3(targetTransform.position.x, targetTransform.position.y , targetTransform.position.z + indicatorZOffset);

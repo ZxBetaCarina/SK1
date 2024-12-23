@@ -14688,7 +14688,7 @@ MonoBehaviour:
     - Item: {fileID: 1896823859611595537, guid: 6f79d9410ae699945983fc19cb8ea8e1, type: 3}
       Probability: 5
     - Item: {fileID: 1896823859611595537, guid: ff02338b2d77c314e8b43b35e9b1aca7, type: 3}
-      Probability: 5000
+      Probability: 5
   _imageLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -35752,7 +35752,8 @@ MonoBehaviour:
   fx: {fileID: 0}
   AnswerSelectedMessage: 
   BestSpotName: And you have made the best spot.
-  indicatorSpritePrefab: {fileID: 5716216400360466020, guid: f84c6f361ef8c3e4397d3c9dad7610ae, type: 3}
+  SkippedindicatorSprite: {fileID: 5716216400360466020, guid: f84c6f361ef8c3e4397d3c9dad7610ae, type: 3}
+  GotitindicatorSprite: {fileID: 5716216400360466020, guid: c0edb4e7f87075c439f8244b1d82502e, type: 3}
   indicatorZOffset: -1
   resultText: {fileID: 1329193260}
 --- !u!1 &1695421133
