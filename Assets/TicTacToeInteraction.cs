@@ -216,8 +216,8 @@ public class TicTacToeInteraction : MonoBehaviour
 
         if (bestAnswer.sprite != null)
         {
-            //float timer = _paytableCalculator.GetTimeForIcon(bestAnswer.sprite.Name);
-            float timer = timebartime;
+            float timer = _paytableCalculator.GetTimeForIcon(bestAnswer.sprite.Name);
+            //float timer = timebartime;
             StartCoroutine(Timer(timer));
         }
         else
