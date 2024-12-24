@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using LeanTween;
 
 public class ShuffleCard : MonoBehaviour
 {
@@ -104,7 +105,9 @@ public class ShuffleCard : MonoBehaviour
     private IEnumerator ShuffleAnimationCoroutine()
     {
         _shufflingFX.Play();
+
         Vector3[] initialPositions = new Vector3[cards.Length];
+        Vector3[] spreadPositions = new Vector3[cards.Length];  // For opening the cards
 
         // Store initial positions
         for (int i = 0; i < cards.Length; i++)
@@ -112,33 +115,39 @@ public class ShuffleCard : MonoBehaviour
             initialPositions[i] = cards[i].transform.position;
         }
 
-        float timer = 0f;
-
-        while (timer < shuffleDuration)
-        {
-            for (int i = 0; i < cards.Length; i++)
-            {
-                // Randomize the position of the cards
-                cards[i].transform.position = Vector3.Lerp(initialPositions[i], Random.insideUnitSphere * 3f, timer / shuffleDuration);
-            }
-
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        // Reset positions
+        // Spread out cards for the "open" effect
         for (int i = 0; i < cards.Length; i++)
         {
-            cards[i].transform.position = initialPositions[i];
+            spreadPositions[i] = initialPositions[i] + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f);
+            LeanTween.move(cards[i], spreadPositions[i], shuffleDuration / 2f).setEase(LeanTweenType.easeInOutQuad);
         }
 
-        // Interchange positions
+        yield return new WaitForSeconds(shuffleDuration / 2f);
+
+        // Close the cards by bringing them back together
+        for (int i = 0; i < cards.Length; i++)
+        {
+            LeanTween.move(cards[i], initialPositions[i], shuffleDuration / 2f).setEase(LeanTweenType.easeInOutQuad);
+        }
+
+        yield return new WaitForSeconds(shuffleDuration / 2f);
+
+        // Move the cards together to form the deck
+        Vector3 deckPosition = new Vector3(0f, 0f, 0f); // Center position to form the deck
+        for (int i = 0; i < cards.Length; i++)
+        {
+            LeanTween.move(cards[i], deckPosition, shuffleDuration / 2f).setEase(LeanTweenType.easeInOutQuad);
+        }
+
+        yield return new WaitForSeconds(shuffleDuration / 2f);
+
+        // Shuffle the cards like a deck
         for (int i = 0; i < cards.Length; i++)
         {
             int randomIndex = Random.Range(i, cards.Length);
             Vector3 tempPosition = cards[i].transform.position;
-            cards[i].transform.position = cards[randomIndex].transform.position;
-            cards[randomIndex].transform.position = tempPosition;
+            LeanTween.move(cards[i], cards[randomIndex].transform.position, shuffleDuration / 2f).setEase(LeanTweenType.easeInOutQuad);
+            LeanTween.move(cards[randomIndex], tempPosition, shuffleDuration / 2f).setEase(LeanTweenType.easeInOutQuad);
         }
 
         isShuffling = false;
