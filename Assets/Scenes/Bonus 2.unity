@@ -2722,6 +2722,7 @@ MonoBehaviour:
   _winningSoundFX: {fileID: 1371447460}
   _looseSoundFX: {fileID: 1866036336}
   _shufflingFX: {fileID: 928012402}
+  canvasRectTransform: {fileID: 508187015}
 --- !u!4 &1354462705
 Transform:
   m_ObjectHideFlags: 0
