@@ -36,6 +36,7 @@ public class TicTacToeInteraction : MonoBehaviour
     public float indicatorZOffset = -1f; 
     
     [SerializeField] private TMP_Text resultText;
+    [SerializeField] private TMP_Text timerText;
     
 
     public async void SelectPosition(Transform pos)
@@ -271,21 +272,27 @@ public class TicTacToeInteraction : MonoBehaviour
         timeBar.transform.parent.gameObject.SetActive(true);
 
         float timeCounter = netTime;
+    
+        // Update the timer UI while the timer is active
         while (timeCounter > 0 && !answerSelected)
         {
             timeBar.fillAmount = timeCounter / netTime;
+
+            // Update the Timer text
+            timerText.text = Mathf.CeilToInt(timeCounter).ToString();  // Show time in seconds
+
             timeCounter -= Time.deltaTime;
-            //spinButton.interactable = false;
-            //OnNotSelectingBestAnswer();
             yield return null;
         }
+
+        // If time runs out, display "Time Expired"
         if (!answerSelected)
         {
             timeBar.fillAmount = 0;
-            print("Pattern Not found : Timer");
+            timerText.text = "Time Expired!";  // Show "Time Expired" when the time is up
+            print("Pattern Not found: Timer");
             CheckForWinningPatterns.PatternNotFound();
             OnNotSelectingBestAnswer();
-            //  Debug.Log("Yash2");
         }
         else
         {
@@ -296,9 +303,7 @@ public class TicTacToeInteraction : MonoBehaviour
         }
 
         Deactivate();
-        //UIManager.INSTANCE._spinButton.interactable = true;
-        //yield return new WaitForSeconds(2);
-        timeBar.transform.parent.gameObject.SetActive(false);
+        timeBar.transform.parent.gameObject.SetActive(true);
         Deactivate();
     }
 
