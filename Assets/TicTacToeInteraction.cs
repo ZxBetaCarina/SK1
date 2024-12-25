@@ -296,6 +296,8 @@ public class TicTacToeInteraction : MonoBehaviour
         }
         else
         {
+            timeBar.transform.parent.gameObject.SetActive(false);
+            
             if (!_selected_best_answer)
             {
                 OnNotSelectingBestAnswer();
@@ -303,7 +305,7 @@ public class TicTacToeInteraction : MonoBehaviour
         }
 
         Deactivate();
-        timeBar.transform.parent.gameObject.SetActive(true);
+        //timeBar.transform.parent.gameObject.SetActive(false);
         Deactivate();
     }
 
